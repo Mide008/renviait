@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Renvia IT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
     <meta name="description" content="Get in touch with Renvia IT. We're here to answer your questions about IT recycling and sustainable disposal.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+    !-- Header -->
     <header class="header" id="header">
         <div class="container">
             <div class="header-content">
@@ -97,7 +98,7 @@
                             </div>
                             <div class="contact-card-content">
                                 <h3>Location</h3>
-                                <p>Milton Keynes, United Kingdom</p>
+                                <p>London, United Kingdom</p>
                                 <p>Nationwide collection service</p>
                             </div>
                         </div>
@@ -262,7 +263,7 @@
                     </li>
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Milton Keynes, United Kingdom</span>
+                        <span>London, United Kingdom</span>
                     </li>
                 </ul>
             </div>
@@ -285,56 +286,16 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="js/main.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            if (!validateForm(this)) {
-                return;
-            }
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            
-            const formData = new FormData(this);
-            const data = {
-                firstName: formData.get('firstName'),
-                lastName: formData.get('lastName'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                subject: formData.get('subject'),
-                message: formData.get('message'),
-                timestamp: new Date().toISOString()
-            };
-            
-            try {
-                // Simulate email sending
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                /* 
-                 * TO ENABLE EMAIL SENDING:
-                 * Use EmailJS or similar service here
-                 * emailjs.send('service_id', 'template_id', data, 'public_key');
-                 */
-                
-                console.log('Contact form submitted:', data);
-                
-                this.reset();
-                showSuccessMessage('Thank you for your message! We\'ll be in touch soon.', this.parentElement);
-                
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-                
-            } catch (error) {
-                showErrorMessage('There was an error sending your message. Please try again.', this.parentElement);
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            }
-        });
+        // Initialize EmailJS
+        (function(){
+            emailjs.init("agh7NagMXpm94Stal");
+        })();
     </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
