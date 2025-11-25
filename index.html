@@ -1,26 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Renvia IT Ltd</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renvia IT - Sustainable IT Recycling & Asset Recovery</title>
+    <meta name="description" content="Professional IT recycling services. Secure data destruction, environmental compliance, and sustainable technology disposal for businesses across the UK.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Renvia IT Ltd</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="login.html" class="btn-text">Login</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <main>
-    <h2>Landing Page</h2>
-    <p>This is just a placeholder. We'll replace with the real design.</p>
-  </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left: Content -->
+                <div class="hero-content">
+                    <h1 class="hero-title animate-fade-in">
+                        Sustainable IT Recycling <br>
+                        <span class="text-primary">For A Better Tomorrow</span>
+                    </h1>
+                    <p class="hero-subtitle animate-fade-in delay-1">
+                        Professional IT asset disposal with secure data destruction and environmental compliance. 
+                        Transform your old technology into positive environmental impact.
+                    </p>
+                    <div class="hero-actions animate-fade-in delay-2">
+                        <a href="book-collection.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Free Collection
+                        </a>
+                        <a href="impact.html" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-calculator"></i>
+                            Calculate Your Impact
+                        </a>
+                    </div>
+                    <div class="hero-stats animate-fade-in delay-3">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Tonnes Recycled</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1,200+</div>
+                            <div class="stat-label">Businesses Served</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Diversion Rate</div>
+                        </div>
+                    </div>
+                </div>
 
-  <script src="js/main.js"></script>
+                <!-- Right: Hero Image -->
+                <div class="hero-image-wrapper animate-fade-in delay-2">
+                    <img 
+                        src="./assets/images/Circular_economy_concept_dfe3c30a.png" 
+                        alt="Circular economy concept with recycled IT equipment" 
+                        class="hero-image"
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three simple steps to responsible IT disposal</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="step-title">Schedule Collection</h3>
+                    <p class="step-description">
+                        Book a free collection online or by phone. Choose a date and time that works for you.
+                    </p>
+                </div>
+                
+                <div class="step-card animate-on-scroll delay-1">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="step-title">We Collect</h3>
+                    <p class="step-description">
+                        Our team arrives on time with all necessary equipment. Quick, professional service.
+                    </p>
+                </div>
+                
+                <div class="step-card animate-on-scroll delay-2">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="step-title">Secure Recycling</h3>
+                    <p class="step-description">
+                        Certified data destruction and environmentally compliant recycling. Full documentation provided.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Collect Section -->
+    <section class="section section-collect bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We Collect</h2>
+                <p class="section-subtitle">We handle all types of IT equipment and electronic waste</p>
+            </div>
+            
+            <div class="collect-grid">
+                <div class="collect-card animate-on-scroll">
+                    <div class="collect-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="collect-title">Laptops & Desktops</h3>
+                    <p class="collect-description">All brands and conditions</p>
+                </div>
+                
+                <div class="collect-card animate-on-scroll delay-1">
+                    <div class="collect-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="collect-title">Servers & Networking</h3>
+                    <p class="collect-description">Enterprise-grade equipment</p>
+                </div>
+                
+                <div class="collect-card animate-on-scroll delay-2">
+                    <div class="collect-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="collect-title">Mobile Devices</h3>
+                    <p class="collect-description">Phones, tablets, and accessories</p>
+                </div>
+                
+                <div class="collect-card animate-on-scroll delay-3">
+                    <div class="collect-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="collect-title">Monitors & Displays</h3>
+                    <p class="collect-description">All screen types and sizes</p>
+                </div>
+                
+                <div class="collect-card animate-on-scroll delay-4">
+                    <div class="collect-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3 class="collect-title">Printers & Peripherals</h3>
+                    <p class="collect-description">Office equipment and accessories</p>
+                </div>
+                
+                <div class="collect-card animate-on-scroll delay-5">
+                    <div class="collect-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h3 class="collect-title">Data Storage</h3>
+                    <p class="collect-description">Hard drives, SSDs, tape drives</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section section-impact">
+        <div class="container">
+            <div class="impact-content">
+                <div class="impact-text">
+                    <h2 class="section-title">Our Environmental Impact</h2>
+                    <p class="impact-description">
+                        Every device recycled makes a difference. Our certified processes ensure maximum 
+                        environmental benefit while maintaining complete data security.
+                    </p>
+                    <div class="impact-stats-list">
+                        <div class="impact-stat-item">
+                            <i class="fas fa-leaf text-primary"></i>
+                            <div>
+                                <div class="impact-stat-value">850 Tonnes</div>
+                                <div class="impact-stat-label">CO₂ Emissions Prevented</div>
+                            </div>
+                        </div>
+                        <div class="impact-stat-item">
+                            <i class="fas fa-tree text-primary"></i>
+                            <div>
+                                <div class="impact-stat-value">14,000+</div>
+                                <div class="impact-stat-label">Trees Saved Equivalent</div>
+                            </div>
+                        </div>
+                        <div class="impact-stat-item">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                            <div>
+                                <div class="impact-stat-value">100%</div>
+                                <div class="impact-stat-label">Secure Data Destruction</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="impact.html" class="btn btn-primary">
+                        Calculate Your Impact
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" 
+                         alt="Environmental impact" 
+                         class="impact-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-testimonials bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Trusted by businesses across the UK</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Renvia IT made our office equipment disposal seamless. Professional service, 
+                        complete documentation, and genuine commitment to sustainability."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Sarah Mitchell</div>
+                            <div class="author-position">IT Manager, Tech Solutions Ltd</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll delay-1">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Outstanding service from start to finish. The team was punctual, efficient, 
+                        and provided excellent data security assurances."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">James Chen</div>
+                            <div class="author-position">Operations Director, Financial Services</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll delay-2">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "We've been using Renvia IT for over two years. Their commitment to 
+                        environmental responsibility aligns perfectly with our company values."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Emma Thompson</div>
+                            <div class="author-position">Sustainability Lead, Green Corp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about our services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is the collection service really free?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer completely free collection for IT equipment across the UK. 
+                        There are no hidden fees or minimum quantities required.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do you ensure data security?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We use certified data destruction methods including physical destruction and 
+                        secure wiping protocols. All processes are documented and certificates are provided 
+                        for compliance purposes.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What certifications do you hold?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We hold ISO 14001 (Environmental Management), ISO 27001 (Information Security), 
+                        and are fully licensed by the Environment Agency for waste management.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How quickly can you collect our equipment?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We typically schedule collections within 2-5 business days. For urgent requests, 
+                        same-day or next-day collection may be available depending on your location.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you offer any value for working equipment?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We assess all equipment and provide fair market value for items that can be 
+                        refurbished and resold. This can offset your disposal costs or generate revenue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Make a Positive Impact?</h2>
+                <p class="cta-subtitle">
+                    Book your free collection today and join hundreds of businesses choosing sustainable IT disposal.
+                </p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Free Collection
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- !-- ========================================
+     UPDATED FOOTER WITH RENVIA LOGO
+     Replace your existing footer with this
+     ======================================== --> -->
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                    <span class="footer-logo-text">Renvia IT</span>
+                </div>
+                <p class="footer-description">
+                    Professional IT recycling services with a commitment to environmental 
+                    sustainability and data security.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">IT Recycling</a></li>
+                    <li><a href="services.html">Data Destruction</a></li>
+                    <li><a href="services.html">Asset Recovery</a></li>
+                    <li><a href="services.html">Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+44 (0) 20 1234 5678</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Milton Keynes, United Kingdom</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Renvia IT Ltd. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>

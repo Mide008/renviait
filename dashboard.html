@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Renvia IT</title>
+    <meta name="description" content="Manage your bookings and track your environmental impact.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                
+                
+                <div class="header-actions">
+    <span id="dashboard-user-info" class="user-info" style="margin-right: 15px;">
+        Welcome, <strong id="dashboardUserNameHeader">Client</strong>!
+    </span>
+    <button id="logoutButton" class="btn btn-text" style="display: none;">Logout</button>
+    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+</div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="dashboard-title">Welcome back, <span id="dashboardUserName">User</span></h1>
+                    <p class="dashboard-subtitle">Manage your collections and track your environmental impact</p>
+                </div>
+                <a href="book-collection.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    New Collection
+                </a>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background-color: #e6f7ee;">
+                        <i class="fas fa-calendar-check" style="color: #009245;"></i>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value" id="totalBookings">0</div>
+                        <div class="stat-card-label">Total Bookings</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background-color: #dbeafe;">
+                        <i class="fas fa-clock" style="color: #2563eb;"></i>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value" id="pendingBookings">0</div>
+                        <div class="stat-card-label">Pending Collections</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background-color: #fef3c7;">
+                        <i class="fas fa-leaf" style="color: #92400e;"></i>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value" id="totalImpact">0 kg</div>
+                        <div class="stat-card-label">CO₂ Prevented</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background-color: #e0e7ff;">
+                        <i class="fas fa-laptop" style="color: #4338ca;"></i>
+                    </div>
+                    <div class="stat-card-content">
+                        <div class="stat-card-value" id="totalDevices">0</div>
+                        <div class="stat-card-label">Devices Recycled</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2 class="section-subtitle">Quick Actions</h2>
+                <div class="quick-actions-grid">
+                    <a href="book-collection.html" class="quick-action-card">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Book Collection</span>
+                    </a>
+                    <a href="impact.html" class="quick-action-card">
+                        <i class="fas fa-calculator"></i>
+                        <span>Calculate Impact</span>
+                    </a>
+                    <a href="contact.html" class="quick-action-card">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact Support</span>
+                    </a>
+                    <a href="#" class="quick-action-card">
+                        <i class="fas fa-file-download"></i>
+                        <span>View Certificates</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recent Bookings -->
+            <div class="dashboard-section-container">
+                <div class="dashboard-section-header">
+                    <h2 class="section-subtitle">Recent Bookings</h2>
+                    <a href="#" class="link-primary">View all</a>
+                </div>
+                
+                <div class="bookings-list" id="bookingsList">
+                    <!-- Bookings will be dynamically inserted here -->
+                </div>
+                
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <i class="fas fa-calendar-times"></i>
+                    <h3>No bookings yet</h3>
+                    <p>Start your journey towards sustainable IT disposal</p>
+                    <a href="book-collection.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Book Your First Collection
+                    </a>
+                </div>
+            </div>
+
+            <!-- Environmental Impact Chart -->
+            <div class="dashboard-section-container">
+                <div class="dashboard-section-header">
+                    <h2 class="section-subtitle">Your Environmental Impact</h2>
+                </div>
+                
+                <div class="impact-summary">
+                    <div class="impact-summary-item">
+                        <div class="impact-summary-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="impact-summary-content">
+                            <div class="impact-summary-value" id="impactCO2">0 kg</div>
+                            <div class="impact-summary-label">CO₂ Emissions Prevented</div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-summary-item">
+                        <div class="impact-summary-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="impact-summary-content">
+                            <div class="impact-summary-value" id="impactTrees">0</div>
+                            <div class="impact-summary-label">Trees Equivalent</div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-summary-item">
+                        <div class="impact-summary-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <div class="impact-summary-content">
+                            <div class="impact-summary-value" id="impactWaste">0 kg</div>
+                            <div class="impact-summary-label">Waste Diverted</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                    <span class="footer-logo-text">Renvia IT</span>
+                </div>
+                <p class="footer-description">
+                    Professional IT recycling services with a commitment to environmental 
+                    sustainability and data security.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">IT Recycling</a></li>
+                    <li><a href="services.html">Data Destruction</a></li>
+                    <li><a href="services.html">Asset Recovery</a></li>
+                    <li><a href="services.html">Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+44 (0) 20 1234 5678</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Milton Keynes, United Kingdom</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Renvia IT Ltd. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

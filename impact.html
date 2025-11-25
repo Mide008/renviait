@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Impact Calculator - Renvia IT</title>
+    <meta name="description" content="Calculate the environmental impact of recycling your IT equipment. See how many CO₂ emissions you can prevent and trees you can save.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="login.html" class="btn-text">Login</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Environmental Impact Calculator</h1>
+            <p class="page-subtitle">
+                Discover the positive environmental impact of recycling your IT equipment
+            </p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <h2>Calculate Your Impact</h2>
+                        <p>Enter your equipment details to see the environmental benefit</p>
+                    </div>
+                    
+                    <form id="impactCalculatorForm" class="calculator-form">
+                        <div class="form-group">
+                            <label class="form-label required">Device Type</label>
+                            <select id="deviceType" class="form-select" required>
+                                <option value="">Select device type...</option>
+                                <option value="laptop">Laptops</option>
+                                <option value="desktop">Desktop Computers</option>
+                                <option value="server">Servers</option>
+                                <option value="mobile">Mobile Devices</option>
+                                <option value="monitor">Monitors</option>
+                                <option value="mixed">Mixed Equipment</option>
+                            </select>
+                            <span class="form-error">Please select a device type</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Number of Devices</label>
+                            <div class="number-input">
+                                <button type="button" class="number-btn" id="decreaseBtn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="deviceCount" class="form-input number-display" 
+                                       value="10" min="1" max="10000" required>
+                                <button type="button" class="number-btn" id="increaseBtn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <span class="form-error">Please enter a valid number</span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            <i class="fas fa-calculator"></i>
+                            Calculate Impact
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="results-card" id="resultsCard" style="display: none;">
+                    <div class="results-header">
+                        <i class="fas fa-leaf"></i>
+                        <h2>Your Environmental Impact</h2>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-value" id="co2Result">0</div>
+                                <div class="result-label">kg CO₂e Prevented</div>
+                                <div class="result-description">
+                                    Equivalent to driving <strong id="drivingEquivalent">0</strong> miles
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-value" id="treesResult">0</div>
+                                <div class="result-label">Trees Equivalent</div>
+                                <div class="result-description">
+                                    Annual CO₂ absorption capacity
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-value" id="carsResult">0</div>
+                                <div class="result-label">Cars Off Road</div>
+                                <div class="result-description">
+                                    For one year equivalent
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-value" id="waterResult">0</div>
+                                <div class="result-label">Litres of Water Saved</div>
+                                <div class="result-description">
+                                    Manufacturing water consumption
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-value" id="wasteResult">0</div>
+                                <div class="result-label">kg Waste Diverted</div>
+                                <div class="result-description">
+                                    From landfill sites
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-value" id="energyResult">0</div>
+                                <div class="result-label">kWh Energy Saved</div>
+                                <div class="result-description">
+                                    Manufacturing energy avoided
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-footer">
+                        <p class="results-note">
+                            <i class="fas fa-info-circle"></i>
+                            These calculations are based on industry averages and lifecycle assessments. 
+                            Actual impact may vary based on device condition and recycling methods.
+                        </p>
+                        <a href="book-collection.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Free Collection
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Info Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why IT Recycling Matters</h2>
+                <p class="section-subtitle">Understanding the environmental benefits of responsible e-waste disposal</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>The E-Waste Challenge</h3>
+                    <p>
+                        Over 50 million tonnes of e-waste are generated globally each year, 
+                        with only 20% being formally recycled. The rest ends up in landfills, 
+                        releasing toxic materials into the environment.
+                    </p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Data Security</h3>
+                    <p>
+                        Professional recycling ensures your sensitive data is completely destroyed 
+                        using certified methods, protecting your business from data breaches and 
+                        ensuring compliance with regulations.
+                    </p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Circular Economy</h3>
+                    <p>
+                        Recycling recovers valuable materials like gold, silver, and copper, 
+                        reducing the need for mining and creating a sustainable cycle that 
+                        benefits both business and the environment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Make a Difference?</h2>
+                <p class="cta-subtitle">
+                    Start your journey towards sustainable IT disposal today
+                </p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Free Collection
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                    <span class="footer-logo-text">Renvia IT</span>
+                </div>
+                <p class="footer-description">
+                    Professional IT recycling services with a commitment to environmental 
+                    sustainability and data security.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">IT Recycling</a></li>
+                    <li><a href="services.html">Data Destruction</a></li>
+                    <li><a href="services.html">Asset Recovery</a></li>
+                    <li><a href="services.html">Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+44 (0) 20 1234 5678</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Milton Keynes, United Kingdom</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Renvia IT Ltd. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+</html>

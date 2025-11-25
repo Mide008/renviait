@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Renvia IT</title>
+    <meta name="description" content="Your IT collection booking has been confirmed. We'll be in touch shortly to confirm the details.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    !-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="login.html" class="btn-text">Login</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Section -->
+    <section class="success-page-section">
+        <div class="container">
+            <div class="success-page-container">
+                <!-- Success Animation -->
+                <div class="success-animation">
+                    <div class="success-checkmark">
+                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <div class="success-content">
+                    <h1 class="success-title">Booking Confirmed!</h1>
+                    <p class="success-message">
+                        Thank you for choosing Renvia IT. We've received your collection request and 
+                        sent a confirmation email to <strong id="userEmail"></strong>.
+                    </p>
+                    
+                    <!-- Booking Reference -->
+                    <div class="booking-reference">
+                        <div class="reference-label">Your Booking Reference</div>
+                        <div class="reference-number" id="bookingReference">BK-XXXXX</div>
+                        <button class="btn-copy" id="copyReferenceBtn" title="Copy reference number">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+
+                    <!-- What Happens Next -->
+                    <div class="next-steps">
+                        <h2 class="next-steps-title">
+                            <i class="fas fa-info-circle"></i>
+                            What Happens Next?
+                        </h2>
+                        <div class="next-steps-timeline">
+                            <div class="timeline-step">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-envelope-open-text"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>1. Check Your Email</h3>
+                                    <p>You'll receive a confirmation email with all the details of your booking within the next few minutes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-step">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>2. We'll Contact You</h3>
+                                    <p>Our team will call you within 24 hours to confirm the collection details and answer any questions.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-step">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>3. Collection Day</h3>
+                                    <p>On the scheduled date, our professional team will arrive to collect your IT equipment safely and securely.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-step">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>4. Documentation</h3>
+                                    <p>After collection, you'll receive certificates of destruction and environmental impact reports.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Info Cards -->
+                    <div class="info-cards-grid">
+                        <div class="info-card-small">
+                            <i class="fas fa-shield-check"></i>
+                            <div>
+                                <div class="info-card-title">Secure & Compliant</div>
+                                <div class="info-card-text">ISO 27001 certified data destruction</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card-small">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <div class="info-card-title">Environmentally Safe</div>
+                                <div class="info-card-text">98% diversion from landfill</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card-small">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <div class="info-card-title">24/7 Support</div>
+                                <div class="info-card-text">We're here to help anytime</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="success-actions">
+                        <a href="index.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home"></i>
+                            Return Home
+                        </a>
+                        <a href="impact.html" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-calculator"></i>
+                            Calculate Your Impact
+                        </a>
+                        <a href="contact.html" class="btn btn-outline btn-lg">
+                            <i class="fas fa-question-circle"></i>
+                            Need Help?
+                        </a>
+                    </div>
+
+                    <!-- Contact Support -->
+                    <div class="support-section">
+                        <p class="support-text">
+                            Have questions about your booking? 
+                            <a href="tel:+442012345678" class="support-link">
+                                <i class="fas fa-phone"></i>
+                                Call us at +44 (0) 20 1234 5678
+                            </a>
+                            or 
+                            <a href="mailto:info@renviait.co.uk" class="support-link">
+                                <i class="fas fa-envelope"></i>
+                                email info@renviait.co.uk
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                    <span class="footer-logo-text">Renvia IT</span>
+                </div>
+                <p class="footer-description">
+                    Professional IT recycling services with a commitment to environmental 
+                    sustainability and data security.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">IT Recycling</a></li>
+                    <li><a href="services.html">Data Destruction</a></li>
+                    <li><a href="services.html">Asset Recovery</a></li>
+                    <li><a href="services.html">Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+44 (0) 20 1234 5678</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Milton Keynes, United Kingdom</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Renvia IT Ltd. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Get booking data from URL parameters or localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookingRef = urlParams.get('ref') || 'BK-' + Date.now();
+            const email = urlParams.get('email') || localStorage.getItem('bookingEmail') || 'your email address';
+            
+            // Display booking reference and email
+            document.getElementById('bookingReference').textContent = bookingRef;
+            document.getElementById('userEmail').textContent = email;
+            
+            // Copy reference button functionality
+            const copyBtn = document.getElementById('copyReferenceBtn');
+            copyBtn.addEventListener('click', function() {
+                const refNumber = document.getElementById('bookingReference').textContent;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(refNumber).then(function() {
+                    // Change button text temporarily
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    copyBtn.style.backgroundColor = '#009245';
+                    
+                    setTimeout(function() {
+                        copyBtn.innerHTML = originalHTML;
+                        copyBtn.style.backgroundColor = '';
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Failed to copy:', err);
+                });
+            });
+            
+            // Trigger checkmark animation
+            setTimeout(function() {
+                document.querySelector('.checkmark-circle').classList.add('animate');
+                document.querySelector('.checkmark-check').classList.add('animate');
+            }, 300);
+        });
+    </script>
+</body>
+</html>

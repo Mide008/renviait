@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection - Renvia IT</title>
+    <meta name="description" content="Book a free IT equipment collection. Quick, secure, and environmentally responsible disposal.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="login.html" class="btn-text">Login</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Book Free Collection</h1>
+            <p class="page-subtitle">
+                Schedule your IT equipment collection in just a few simple steps
+            </p>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="booking-wrapper">
+                <!-- Progress Stepper -->
+                <div class="stepper" id="stepper">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <div class="step-label">Contact Details</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <div class="step-label">Equipment Info</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <div class="step-label">Collection Details</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="4">
+                        <div class="step-circle">4</div>
+                        <div class="step-label">Data Security</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="5">
+                        <div class="step-circle">5</div>
+                        <div class="step-label">Review</div>
+                    </div>
+                </div>
+
+                <!-- Form Container -->
+                <div class="booking-form-container">
+                    <form id="bookingForm">
+                        <!-- Step 1: Contact Details -->
+                        <div class="form-step active" data-step="1">
+                            <h2 class="form-step-title">Contact & Organization Details</h2>
+                            <p class="form-step-description">Please provide your contact information</p>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label required">First Name</label>
+                                    <input type="text" name="firstName" class="form-input" required>
+                                    <span class="form-error">Please enter your first name</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label required">Last Name</label>
+                                    <input type="text" name="lastName" class="form-input" required>
+                                    <span class="form-error">Please enter your last name</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label required">Email Address</label>
+                                <input type="email" name="email" class="form-input" required>
+                                <span class="form-error">Please enter a valid email address</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label required">Phone Number</label>
+                                <input type="tel" name="phone" class="form-input" required>
+                                <span class="form-error">Please enter a valid phone number</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label required">Company Name</label>
+                                <input type="text" name="company" class="form-input" required>
+                                <span class="form-error">Please enter your company name</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Job Title</label>
+                                <input type="text" name="jobTitle" class="form-input">
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Equipment Info -->
+                        <div class="form-step" data-step="2">
+                            <h2 class="form-step-title">Equipment Information</h2>
+                            <p class="form-step-description">Tell us what equipment you need to recycle</p>
+                            
+                            <div id="equipmentList">
+                                <div class="equipment-item">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label required">Device Type</label>
+                                            <select name="deviceType[]" class="form-select" required>
+                                                <option value="">Select type...</option>
+                                                <option value="laptop">Laptops</option>
+                                                <option value="desktop">Desktop Computers</option>
+                                                <option value="server">Servers</option>
+                                                <option value="mobile">Mobile Devices</option>
+                                                <option value="monitor">Monitors</option>
+                                                <option value="printer">Printers</option>
+                                                <option value="networking">Networking Equipment</option>
+                                                <option value="storage">Storage Devices</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                            <span class="form-error">Please select a device type</span>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="form-label required">Quantity</label>
+                                            <input type="number" name="quantity[]" class="form-input" min="1" required>
+                                            <span class="form-error">Please enter quantity</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-secondary" id="addEquipmentBtn">
+                                <i class="fas fa-plus"></i>
+                                Add Another Device Type
+                            </button>
+                            
+                            <div class="form-group" style="margin-top: 2rem;">
+                                <label class="form-label">Additional Notes</label>
+                                <textarea name="equipmentNotes" class="form-textarea" rows="3" 
+                                          placeholder="Any special requirements or notes about the equipment..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Collection Details -->
+                        <div class="form-step" data-step="3">
+                            <h2 class="form-step-title">Collection Details</h2>
+                            <p class="form-step-description">When and where should we collect?</p>
+                            
+                            <div class="form-group">
+                                <label class="form-label required">Collection Address</label>
+                                <input type="text" name="address" class="form-input" 
+                                       placeholder="Street address" required>
+                                <span class="form-error">Please enter the collection address</span>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label required">City</label>
+                                    <input type="text" name="city" class="form-input" required>
+                                    <span class="form-error">Please enter city</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label required">Postcode</label>
+                                    <input type="text" name="postcode" class="form-input" required>
+                                    <span class="form-error">Please enter postcode</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label required">Preferred Collection Date</label>
+                                    <input type="date" name="collectionDate" class="form-input" required>
+                                    <span class="form-error">Please select a date</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label required">Preferred Time</label>
+                                    <select name="collectionTime" class="form-select" required>
+                                        <option value="">Select time...</option>
+                                        <option value="morning">Morning (8am - 12pm)</option>
+                                        <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                                        <option value="flexible">Flexible</option>
+                                    </select>
+                                    <span class="form-error">Please select a time</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Access Instructions</label>
+                                <textarea name="accessInstructions" class="form-textarea" rows="3"
+                                          placeholder="e.g., Loading bay location, parking instructions, contact person on site..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Data Security -->
+                        <div class="form-step" data-step="4">
+                            <h2 class="form-step-title">Data Security Requirements</h2>
+                            <p class="form-step-description">Help us understand your data protection needs</p>
+                            
+                            <div class="form-group">
+                                <label class="form-label required">Data Destruction Method</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="dataDestruction" value="standard" required>
+                                        <div class="radio-content">
+                                            <div class="radio-title">Standard Secure Wiping</div>
+                                            <div class="radio-description">Department of Defense (DoD) 5220.22-M standard</div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="radio-option">
+                                        <input type="radio" name="dataDestruction" value="physical" required>
+                                        <div class="radio-content">
+                                            <div class="radio-title">Physical Destruction</div>
+                                            <div class="radio-description">Complete physical shredding of storage media</div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="radio-option">
+                                        <input type="radio" name="dataDestruction" value="onsite" required>
+                                        <div class="radio-content">
+                                            <div class="radio-title">On-Site Destruction</div>
+                                            <div class="radio-description">Witnessed destruction at your location (additional fee may apply)</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <span class="form-error">Please select a data destruction method</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label required">Certificate of Destruction Required?</label>
+                                <div class="radio-group-inline">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="certificate" value="yes" required>
+                                        <span>Yes, I need a certificate</span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="certificate" value="no" required>
+                                        <span>No certificate needed</span>
+                                    </label>
+                                </div>
+                                <span class="form-error">Please make a selection</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" name="dataProtection" id="dataProtection" required>
+                                    <label for="dataProtection">
+                                        I confirm that all data on these devices is either backed up or no longer needed, 
+                                        and I authorize Renvia IT to proceed with secure data destruction as specified.
+                                    </label>
+                                </div>
+                                <span class="form-error">Please confirm data authorization</span>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Review -->
+                        <div class="form-step" data-step="5">
+                            <h2 class="form-step-title">Review Your Information</h2>
+                            <p class="form-step-description">Please review your details before submitting</p>
+                            
+                            <div class="review-section">
+                                <h3 class="review-title">Contact Information</h3>
+                                <div class="review-content" id="reviewContact"></div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3 class="review-title">Equipment Details</h3>
+                                <div class="review-content" id="reviewEquipment"></div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3 class="review-title">Collection Information</h3>
+                                <div class="review-content" id="reviewCollection"></div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3 class="review-title">Data Security</h3>
+                                <div class="review-content" id="reviewSecurity"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" name="terms" id="terms" required>
+                                    <label for="terms">
+                                        I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> 
+                                        and <a href="privacy.html" target="_blank">Privacy Policy</a>
+                                    </label>
+                                </div>
+                                <span class="form-error">Please accept the terms and conditions</span>
+                            </div>
+                        </div>
+
+                        <!-- Form Navigation -->
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">
+                                <i class="fas fa-arrow-left"></i>
+                                Previous
+                            </button>
+                            <div class="step-indicator" id="stepIndicator">Step 1 of 5</div>
+                            <button type="button" class="btn btn-primary" id="nextBtn">
+                                Next
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">
+                                <i class="fas fa-check"></i>
+                                Submit Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success Message (Hidden by default) -->
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Booking Confirmed!</h2>
+                    <p>
+                        Thank you for choosing Renvia IT. We've received your collection request and 
+                        sent a confirmation email to <strong id="confirmEmail"></strong>.
+                    </p>
+                    <p>
+                        Our team will contact you shortly to confirm the collection details.
+                    </p>
+                    <div class="success-actions">
+                        <a href="index.html" class="btn btn-primary">Return Home</a>
+                        <a href="dashboard.html" class="btn btn-secondary">View My Bookings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                    <span class="footer-logo-text">Renvia IT</span>
+                </div>
+                <p class="footer-description">
+                    Professional IT recycling services with a commitment to environmental 
+                    sustainability and data security.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">IT Recycling</a></li>
+                    <li><a href="services.html">Data Destruction</a></li>
+                    <li><a href="services.html">Asset Recovery</a></li>
+                    <li><a href="services.html">Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+44 (0) 20 1234 5678</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Milton Keynes, United Kingdom</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Renvia IT Ltd. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- EmailJS SDK - CONFIGURED -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        (function(){
+            emailjs.init("agh7NagMXpm94Stal");
+        })();
+    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking-form.js"></script>
+</body>
+</html>
