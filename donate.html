@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate IT Equipment - Renvia IT | Empower a New Generation</title>
+    <meta name="description" content="Donate your working or repairable IT equipment to support tech education in developing regions. Free collection, CSR reporting available.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Colors */
+            --primary: #009245;
+            --primary-dark: #007536;
+            --primary-light: #00a94f;
+            --primary-pale: #e6f7ee;
+            
+            --secondary: #2c3e50;
+            --secondary-light: #34495e;
+            
+            --text-primary: #1a1a1a;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            
+            --bg-white: #ffffff;
+            --bg-light: #f9fafb;
+            --bg-dark: #111827;
+            
+            --border-light: #e5e7eb;
+            --border-medium: #d1d5db;
+            
+            /* Typography */
+            --font-heading: 'Lexend', sans-serif;
+            --font-body: 'Lato', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --spacing-3xl: 6rem;
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+            transition: all var(--transition-normal);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: transform var(--transition-normal);
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition-normal);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-text {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+
+        .btn-text:hover {
+            color: var(--primary-dark);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-normal);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(0, 146, 69, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 146, 69, 0.35);
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+
+        .btn-white:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 3px;
+            transition: all var(--transition-normal);
+        }
+
+        /* Hero Section */
+        .donation-hero {
+            margin-top: 82px;
+            text-align: center;
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+            background: linear-gradient(135deg, var(--primary-pale) 0%, rgba(255,255,255,0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .donation-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 146, 69, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, 30px) scale(1.1); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xl);
+            line-height: 1.8;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) auto;
+            max-width: 900px;
+        }
+        
+        .impact-stat {
+            text-align: center;
+            background: var(--bg-white);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-light);
+        }
+        
+        .impact-stat:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            font-family: var(--font-heading);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: var(--spacing-xs);
+            font-weight: 500;
+        }
+
+        .cta-actions {
+            margin-top: var(--spacing-lg);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .bg-light {
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-intro {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Feature Cards */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .feature-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.75rem;
+            background: linear-gradient(135deg, rgba(0, 146, 69, 0.1), rgba(0, 146, 69, 0.05));
+            color: var(--primary);
+            transition: all var(--transition-normal);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, rgba(0, 146, 69, 0.15), rgba(0, 146, 69, 0.08));
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Equipment Grid */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .equipment-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-light);
+        }
+        
+        .equipment-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        
+        .equipment-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            min-width: 24px;
+        }
+
+        .equipment-item span {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .note-text {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-top: var(--spacing-lg);
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            background: var(--bg-white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-light);
+        }
+        
+        .process-step:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(0, 146, 69, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .process-step p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* Certificate Grid */
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .certificate-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--primary);
+            transition: all var(--transition-normal);
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-left-width: 8px;
+        }
+
+        .certificate-card h3 {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .certificate-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .benefit-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            font-size: 2rem;
+            background: linear-gradient(135deg, rgba(0, 146, 69, 0.1), rgba(0, 146, 69, 0.05));
+            color: var(--primary);
+            transition: all var(--transition-normal);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.15) rotate(-5deg);
+            background: linear-gradient(135deg, rgba(0, 146, 69, 0.15), rgba(0, 146, 69, 0.08));
+        }
+
+        .benefit-card h3 {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .section-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(2.25rem, 4vw, 3rem);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.95;
+        }
+
+        .note-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-md);
+            margin: var(--spacing-xl) auto 0;
+            max-width: 700px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .note-box p {
+            margin: 0;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .note-box a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: opacity var(--transition-fast);
+        }
+
+        .note-box a:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-logo-image {
+            height: 50px;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all var(--transition-normal);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.15rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        .footer-links,
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-links li,
+        .footer-contact li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-links a,
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover,
+        .footer-contact a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-xs);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            margin-top: 0.25rem;
+            min-width: 16px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-normal);
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav,
+            .header-actions {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .donation-hero {
+                padding: var(--spacing-xl) 0 var(--spacing-lg);
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-sm);
+            }
+
+            .impact-stat {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-grid,
+            .benefits-grid,
+            .certificate-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+                padding: var(--spacing-md);
+            }
+
+            .process-step:hover {
+                transform: translateY(-5px);
+            }
+
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .btn-lg {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#how-it-works" class="btn-text">Donate</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="donation-hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="page-title">Turn Your Old IT Into Opportunity</h1>
+                <p class="hero-subtitle">
+                    Your unused laptops, desktops, and monitors can power the next generation of tech talent in developing regions. 
+                    Donate through Renvia IT and make a lasting impact while supporting your sustainability goals.
+                </p>
+                
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Devices Donated</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-number">85%</span>
+                        <span class="stat-label">Reuse Rate</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-number">15T</span>
+                        <span class="stat-label">CO₂e Saved</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Tech Hubs Supported</span>
+                    </div>
+                </div>
+                
+                <div class="cta-actions">
+                    <a href="#donation-form" class="btn btn-primary btn-lg">
+                        <i class="fas fa-hands-helping"></i>
+                        Start Your Donation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Transform Unused IT Into Real-World Impact</h2>
+                <p class="section-subtitle">
+                    Partner with us to give your surplus technology a second life while empowering communities in Nigeria and across Africa
+                </p>
+            </div>
+            
+            <p class="section-intro">
+                Every organization has IT equipment sitting idle—laptops collecting dust in storage rooms, desktops from office upgrades, 
+                monitors that still work perfectly well. Instead of disposing of these assets, you can redirect them to where they're needed most.
+            </p>
+            
+            <p class="section-intro">
+                Through our donation program, your equipment directly supports tech education hubs in developing regions, helping train 
+                the next generation of developers, technicians, and digital innovators—all while strengthening your ESG commitments and 
+                reducing environmental waste.
+            </p>
+            
+            <div class="section-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Skills Development</h3>
+                    <p>Equip aspiring tech professionals with the tools they need to learn coding, hardware repair, and digital skills that open doors to better opportunities.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Environmental Responsibility</h3>
+                    <p>Extend product lifecycles, divert e-waste from landfills, and significantly reduce your organization's carbon footprint through reuse.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>CSR Recognition</h3>
+                    <p>Demonstrate measurable social impact with comprehensive documentation for your CSR reports, ESG frameworks, and sustainability initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Can Donate -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We Accept for Donation</h2>
+                <p class="section-subtitle">Working, repairable, or even incomplete equipment—we maximize the value of every donation</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <i class="fas fa-laptop"></i>
+                    <span>Laptops</span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-desktop"></i>
+                    <span>Desktop Computers</span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-tv"></i>
+                    <span>Monitors & Displays</span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-print"></i>
+                    <span>Printers & Scanners</span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-keyboard"></i>
+                    <span>Keyboards & Mice</span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Network Equipment</span>
+                </div>
+            </div>
+            
+            <p class="text-center note-text">
+                <strong>Equipment doesn't need to be perfect.</strong> We accept devices with minor faults or missing components—our team 
+                recovers usable parts and materials to maximize every donation's impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Donation Journey</h2>
+                <p class="section-subtitle">A seamless process from collection to measurable community impact</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Schedule Free Collection</h3>
+                        <p>
+                            To arrange your donation, please complete our online booking form. Simply title the collection 'Social Impact Donation' in the equipment details section. We will schedule a convenient collection time for you completely free of charge. All donated equipment will undergo our Certified Data Destruction process before reuse.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Secure Data Handling</h3>
+                        <p>
+                            All data-bearing devices undergo professional secure wiping following industry best practices. Optional certified 
+                            data destruction certificates are available for organizations requiring formal documentation.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Assessment & Refurbishment</h3>
+                        <p>
+                            Our technicians evaluate, test, and prepare equipment for reuse. Functional devices are refurbished; 
+                            non-working items are responsibly recycled with parts recovered for repairs.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3>Deployment to Tech Hubs</h3>
+                        <p>
+                            Equipment is shipped to our vetted partner tech education centers in Nigeria and across Africa, where it 
+                            directly supports hands-on training programs and digital literacy initiatives.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3>Impact Reporting</h3>
+                        <p>
+                            Receive detailed documentation showing device counts, environmental metrics (CO₂e savings), and the social 
+                            impact of your contribution—perfect for stakeholder communications and annual reports.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Documentation for Your Impact</h2>
+                <p class="section-subtitle">
+                    Comprehensive certificates and reports to support your CSR and ESG commitments
+                </p>
+            </div>
+            
+            <div class="certificate-grid">
+                <div class="certificate-card">
+                    <h3><i class="fas fa-certificate"></i> Donation Certificate</h3>
+                    <p>Official confirmation of donated equipment quantities and types, suitable for internal records and public CSR communications.</p>
+                </div>
+                
+                <div class="certificate-card">
+                    <h3><i class="fas fa-leaf"></i> Environmental Impact Report</h3>
+                    <p>Quantified CO₂e emissions avoided, e-waste diverted from landfills, and resource conservation metrics aligned with global sustainability frameworks.</p>
+                </div>
+                
+                <div class="certificate-card">
+                    <h3><i class="fas fa-file-alt"></i> Enhanced ESG Report</h3>
+                    <p>Premium option featuring detailed narratives, beneficiary stories, and comprehensive metrics formatted for inclusion in annual sustainability reports.</p>
+                </div>
+            </div>
+            
+            <p class="text-center note-text">
+                These documents provide the transparency your leadership teams, investors, and auditors need to verify and communicate your social impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Partner With Renvia IT?</h2>
+                <p class="section-subtitle">Beyond donations—creating lasting value for your organization and communities</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-pound-sign"></i>
+                    </div>
+                    <h3>Zero Cost to You</h3>
+                    <p>Completely free collection and processing—no disposal fees, transportation charges, or hidden costs.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Circular Economy Model</h3>
+                    <p>Prioritize reuse over recycling, dramatically extending product lifecycles and reducing manufacturing demand.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Measurable Social Value</h3>
+                    <p>Direct impact on digital inclusion, skills training, and economic opportunity in underserved communities.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Data Security Guaranteed</h3>
+                    <p>Professional-grade data sanitization with optional certification for complete peace of mind and regulatory compliance.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Full Transparency</h3>
+                    <p>Complete audit trail and reporting for CSR teams, ESG frameworks, and stakeholder communications.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Global Development Impact</h3>
+                    <p>Support UN Sustainable Development Goals while bridging the digital divide in emerging markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta" id="donation-form">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Make a Difference?</h2>
+                <p class="cta-subtitle">
+                    Book your free donation collection today and start creating positive change
+                </p>
+                <div class="cta-actions">
+                    <a href="book-collection.html?type=donation" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Donation Pickup
+                    </a>
+                </div>
+                
+                <div class="note-box">
+                    <p>
+                        <strong>Just need IT removal?</strong> If you prefer standard disposal without donation documentation, 
+                        our core <a href="pricing.html">Free IT Collection Service</a> is available with the same professional care.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                        <span class="footer-logo-text">Renvia IT</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional IT recycling services with a commitment to environmental 
+                        sustainability and data security.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">IT Recycling</a></li>
+                        <li><a href="services.html">Data Destruction</a></li>
+                        <li><a href="services.html">Asset Recovery</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7497 149266</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Milton Keynes, United Kingdom</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Renvia IT Ltd. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('nav');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+        }
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
+            } else {
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = 100;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for Fade-in Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.feature-card, .benefit-card, .certificate-card, .process-step, .equipment-item, .impact-stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Stats
+        const animateCounter = (element, target, suffix = '') => {
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, 16);
+        };
+
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const text = statNumber.textContent;
+                    
+                    let suffix = '';
+                    let numValue = 0;
+                    
+                    if (text.includes('%')) {
+                        suffix = '%';
+                        numValue = parseInt(text);
+                    } else if (text.includes('T')) {
+                        suffix = 'T';
+                        numValue = parseInt(text);
+                    } else if (text.includes('+')) {
+                        suffix = '+';
+                        numValue = parseInt(text);
+                    } else {
+                        numValue = parseInt(text);
+                    }
+                    
+                    statNumber.textContent = '0' + suffix;
+                    animateCounter(statNumber, numValue, suffix);
+                    entry.target.classList.add('counted');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.impact-stat').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+    </script>
+</body>
+</html>

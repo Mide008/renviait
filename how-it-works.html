@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
     <title>How It Works - Renvia IT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
-    <meta name="description" content="Learn how Renvia IT’s secure, sustainable IT recycling process works – from collection to certified data destruction and impact reporting.">
+    <meta name="description" content="Learn how Renvia IT's secure, sustainable IT recycling process works – from collection to certified data destruction and impact reporting.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,31 +23,420 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="css/pages.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+         /* Logo with brand style */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: 42px;
+            width: auto;
+            transition: transform var(--transition-normal);
+        }
+
+        .logo-text {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Services Section Styles */
+        .services-comparison {
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f7f4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-comparison::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 146, 69, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .services-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .services-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        
+        .services-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            padding: var(--spacing-xl);
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .service-card.standard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .service-card.premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2c3e50, #4a6378);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+        
+        .standard .service-icon {
+            background: rgba(0, 146, 69, 0.1);
+            color: var(--primary);
+        }
+        
+        .premium .service-icon {
+            background: rgba(44, 62, 80, 0.1);
+            color: var(--secondary);
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text-primary);
+        }
+        
+        .service-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: var(--spacing-xs);
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            margin-right: var(--spacing-sm);
+            color: var(--primary);
+            font-size: 1rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .premium .feature-icon {
+            color: var(--secondary);
+        }
+        
+        .feature-text {
+            flex: 1;
+            color: var(--text-primary);
+        }
+        
+        .service-cta {
+            margin-top: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .btn-standard {
+            background: var(--primary);
+            color: var(--bg-white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: inline-block;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+        }
+        
+        .btn-standard:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 146, 69, 0.3);
+        }
+        
+        .btn-premium {
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+            color: var(--bg-white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: inline-block;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+        }
+        
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.4);
+        }
+        
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #FFC107;
+            color: var(--text-primary);
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Enhanced Process Timeline */
+        .process-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            border-radius: var(--radius-full);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+        }
+        
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-right: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            z-index: 1;
+            position: relative;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .timeline-content h2 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        
+        .timeline-content p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .feature-list li {
+            padding: var(--spacing-xs) 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-list i {
+            color: var(--primary);
+            margin-right: var(--spacing-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        /* Interactive Elements */
+        .service-card {
+            cursor: pointer;
+        }
+        
+        .service-card .service-features {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .service-card.expanded .service-features {
+            max-height: 500px;
+        }
+        
+        .service-card .service-cta {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card.expanded .service-cta {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .services-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-card {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .process-timeline::before {
+                left: 25px;
+            }
+            
+            .timeline-marker {
+                width: 50px;
+                height: 50px;
+                margin-right: var(--spacing-md);
+            }
+        }
+    </style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Header -->
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                    <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
                 </a>
                 
                 <nav class="nav" id="nav">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="index.html" class="nav-link">Home</a>
                     <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
                     <a href="impact.html" class="nav-link">Impact</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
                 
                 <div class="header-actions">
-                    <a href="login.html" class="btn-text">Login</a>
+                    <a href="donate.html" class="btn-text">Donate</a>
                     <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
                 </div>
                 
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -62,8 +451,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <h1 class="page-title">How It Works</h1>
             <p class="page-subtitle">
-                A simple, secure, and sustainable IT asset disposal process from start to finish
+                A simple, secure and sustainable process for collecting, wiping and reusing your retired IT equipment.
             </p>
+            <!-- <p class="page-description">
+                Our 5-step workflow keeps everything transparent, compliant and disruption-free.
+            </p> -->
         </div>
     </section>
 
@@ -78,13 +470,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="timeline-content">
                         <h2>Book Your Collection</h2>
                         <p>
-                            Use our online booking form or contact our team. Choose a date and time 
-                            that works for your organisation. We confirm everything with you in writing.
+                            Tell us what equipment you're disposing of, where it's located, and when you'd like us to attend.
                         </p>
                         <ul class="feature-list">
                             <li><i class="fas fa-check"></i> Free, no-obligation quote</li>
-                            <li><i class="fas fa-check"></i> Flexible scheduling</li>
-                            <li><i class="fas fa-check"></i> Instant email confirmation</li>
+                            <li><i class="fas fa-check"></i> Flexible scheduling around your business hours</li>
+                            <li><i class="fas fa-check"></i> Clear confirmation of what we will collect</li>
+                            <li><i class="fas fa-check"></i> Simple instructions for preparing your site (if required)</li>
                         </ul>
                     </div>
                 </div>
@@ -96,13 +488,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="timeline-content">
                         <h2>Secure On-Site Collection</h2>
                         <p>
-                            Our trained, uniformed team arrives with all necessary equipment. 
-                            We manage loading, inventory, and documentation while minimising disruption.
+                            Our trained team arrives with tamper-evident containers and the correct handling equipment. We manage all loading and verification on-site.
                         </p>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Full chain-of-custody tracking</li>
-                            <li><i class="fas fa-check"></i> Liability-insured logistics</li>
-                            <li><i class="fas fa-check"></i> Detailed asset inventory</li>
+                            <li><i class="fas fa-check"></i> Full chain-of-custody from your premises to our facility</li>
+                            <li><i class="fas fa-check"></i> Insured logistics and professional crew</li>
+                            <li><i class="fas fa-check"></i> Disruption-free loading</li>
+                            <li><i class="fas fa-check"></i> Asset list captured where applicable</li>
                         </ul>
                     </div>
                 </div>
@@ -114,13 +506,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="timeline-content">
                         <h2>Certified Data Destruction</h2>
                         <p>
-                            Storage devices are sanitised or physically destroyed using industry-standard 
-                            methods. Every action is logged and mapped to your assets.
+                            All data-bearing devices are sanitised or destroyed using industry-standard methods that align with GDPR and recognised wiping protocols.
                         </p>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> NIST- & DoD-aligned data wiping</li>
-                            <li><i class="fas fa-check"></i> Physical destruction options</li>
-                            <li><i class="fas fa-check"></i> Certificates of destruction issued</li>
+                            <li><i class="fas fa-check"></i> NIST/DoD-aligned data wiping for reusable devices</li>
+                            <li><i class="fas fa-check"></i> Physical destruction options for high-risk media</li>
+                            <li><i class="fas fa-check"></i> Every action logged for your compliance records</li>
+                            <li><i class="fas fa-check"></i> Certificates of destruction provided (standard or enhanced depending on requirements)</li>
                         </ul>
                     </div>
                 </div>
@@ -130,15 +522,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="timeline-number">4</div>
                     </div>
                     <div class="timeline-content">
-                        <h2>Refurbish, Reuse, or Recycle</h2>
+                        <h2>Refurbish, Reuse or Recycle</h2>
                         <p>
-                            Devices are tested, graded, and either refurbished for reuse, harvested 
-                            for parts, or recycled through approved downstream partners.
+                            We prioritise reuse to maximise asset life and minimise waste. Anything non-reusable is responsibly dismantled or recycled through approved partners.
                         </p>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Reuse first, recycle as last resort</li>
-                            <li><i class="fas fa-check"></i> 98% diversion from landfill (target)</li>
-                            <li><i class="fas fa-check"></i> Responsible material recovery</li>
+                            <li><i class="fas fa-check"></i> "Reuse first" sustainability approach</li>
+                            <li><i class="fas fa-check"></i> High diversion from landfill</li>
+                            <li><i class="fas fa-check"></i> Approved downstream recycling partners</li>
+                            <li><i class="fas fa-check"></i> Responsible recovery of materials</li>
                         </ul>
                     </div>
                 </div>
@@ -150,13 +542,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="timeline-content">
                         <h2>Reporting & ESG Documentation</h2>
                         <p>
-                            You receive a complete documentation pack outlining asset disposition, 
-                            data destruction, compliance, and environmental impact.
+                            You receive a clear set of documents to support internal reporting, audits and compliance checks.
                         </p>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Certificates and waste transfer notes</li>
-                            <li><i class="fas fa-check"></i> ESG and carbon impact summaries</li>
-                            <li><i class="fas fa-check"></i> Audit-ready documentation for your records</li>
+                            <li><i class="fas fa-check"></i> Certificates of data destruction</li>
+                            <li><i class="fas fa-check"></i> Summary of collected items</li>
+                            <li><i class="fas fa-check"></i> Documentation suitable for internal or external audits</li>
+                            <li><i class="fas fa-check"></i> Optional ESG and carbon reporting</li>
                         </ul>
                     </div>
                 </div>
@@ -164,8 +556,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <!-- Enhanced Services Section -->
+    <section class="services-comparison">
+        <div class="container">
+            <div class="services-header">
+                <h2>Choose Your Service Level</h2>
+                <p>Every collection includes a secure, compliant baseline, with optional upgrades for organisations that require deeper reporting or enhanced ESG detail.</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card standard">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title">Standard Service</h3>
+                            <p class="service-subtitle">Included with all collections</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="service-features">
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-shield-alt"></i></span>
+                            <span class="feature-text">Secure logistics and chain-of-custody</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-file-contract"></i></span>
+                            <span class="feature-text">GDPR-aligned handling</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-certificate"></i></span>
+                            <span class="feature-text">Standard certificates of data destruction (per batch)</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-clipboard-list"></i></span>
+                            <span class="feature-text">Basic collection documentation</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="service-cta">
+                        <a href="book-collection.html" class="btn-standard">Book Standard Collection</a>
+                    </div>
+                </div>
+                
+                <div class="service-card premium">
+                    <div class="badge">Premium</div>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title">Enhanced Service</h3>
+                            <p class="service-subtitle">Available on request (paid enhancements)</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="service-features">
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-list-alt"></i></span>
+                            <span class="feature-text">Item-level asset inventory</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-search-dollar"></i></span>
+                            <span class="feature-text">Detailed audit packs</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-chart-line"></i></span>
+                            <span class="feature-text">ESG and carbon-impact summaries</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><i class="fas fa-file-export"></i></span>
+                            <span class="feature-text">Custom reporting formats</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="service-cta">
+                        <a href="contact.html" class="btn-premium">Request Enhanced Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Certifications Section -->
-    <section class="section bg-light">
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Certifications & Compliance</h2>
@@ -212,18 +687,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="section section-cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Get Started?</h2>
+                <h2 class="cta-title">Ready to schedule your collection?</h2>
                 <p class="cta-subtitle">
-                    Book your free collection and turn retired IT assets into secure, sustainable impact.
+                    Get a fast, transparent quote with no commitment required.
                 </p>
                 <div class="cta-actions">
                     <a href="book-collection.html" class="btn btn-white btn-lg">
                         <i class="fas fa-calendar-check"></i>
-                        Book Free Collection
+                        Book a Collection
                     </a>
                     <a href="contact.html" class="btn btn-outline-white btn-lg">
-                        <i class="fas fa-phone"></i>
-                        Contact Our Team
+                        <i class="fas fa-file-alt"></i>
+                        Request a Quote
                     </a>
                 </div>
             </div>
@@ -312,5 +787,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
 
     <script src="js/main.js"></script>
+    <script>
+        // Enhanced Service Cards Interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Close all other cards
+                    serviceCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('expanded');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    this.classList.toggle('expanded');
+                });
+            });
+            
+            // Initialize cards as expanded on desktop
+            if (window.innerWidth > 768) {
+                serviceCards.forEach(card => {
+                    card.classList.add('expanded');
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    serviceCards.forEach(card => {
+                        card.classList.add('expanded');
+                    });
+                } else {
+                    serviceCards.forEach(card => {
+                        card.classList.remove('expanded');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

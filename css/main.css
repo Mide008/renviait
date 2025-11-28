@@ -189,7 +189,7 @@ input, textarea, select {
 }
 
 .header-logo { /* NEW/CORRECTED CLASS NAME */
-    width: 4rem; /* Increased size for better visibility */
+    width: 9rem; /* Increased size for better visibility */
     height: 4rem;
     object-fit: contain;
     transition: transform var(--transition-normal);
