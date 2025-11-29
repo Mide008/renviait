@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
+    <title>Asset Recovery Services - Renvia IT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
+    <meta name="description" content="Maximize value from your retired IT assets with professional asset recovery services. Secure data destruction, remarketing, and revenue sharing options.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Asset Recovery Hero Section */
+        .asset-recovery-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .asset-recovery-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .asset-recovery-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .asset-recovery-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .asset-recovery-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: white;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 0.95;
+            line-height: 1.5;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-2xl);
+            flex-wrap: wrap;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .hero-feature i {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-hero-primary {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: #f8f9fa;
+        }
+        
+        .btn-hero-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+        
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .hero-value-badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+            flex-wrap: wrap;
+        }
+        
+        .value-badge {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .value-badge i {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Asset Recovery Sections */
+        .value-proposition {
+            padding: var(--spacing-3xl) 0;
+            background: var(--bg-light);
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .value-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .value-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.4rem;
+        }
+        
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .recovery-process {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .process-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: var(--spacing-2xl) auto 0;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            border-radius: var(--radius-full);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin: 0 var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            z-index: 1;
+            position: relative;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: var(--bg-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .revenue-models {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f7f4 100%);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .model-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .model-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-xl);
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .model-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .model-card h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .model-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .model-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .model-features li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .model-features li i {
+            color: var(--primary);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .eligible-assets {
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl) 0;
+        }
+        
+        .assets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .asset-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .asset-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .asset-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .asset-card h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .asset-card .recovery-rate {
+            display: inline-block;
+            background: rgba(0, 146, 69, 0.1);
+            color: var(--primary);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .asset-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .asset-card li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+        
+        .asset-card li i {
+            color: var(--primary);
+            margin-right: var(--spacing-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .case-studies {
+            background: var(--bg-light);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .case-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .case-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .case-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .case-card h4 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .case-card .result {
+            background: rgba(0, 146, 69, 0.1);
+            color: var(--primary);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            margin: var(--spacing-md) 0;
+            text-align: center;
+        }
+        
+        .case-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .cta-banner {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            padding: var(--spacing-2xl);
+            text-align: center;
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .cta-banner h2 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 2.2rem;
+        }
+        
+        .cta-banner p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .cta-banner .cta-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .asset-recovery-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: var(--spacing-xl);
+            }
+            
+            .hero-features {
+                gap: var(--spacing-md);
+                margin-bottom: var(--spacing-xl);
+            }
+            
+            .hero-feature {
+                font-size: 0.9rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-sm);
+            }
+            
+            .btn-hero-primary,
+            .btn-hero-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                padding: var(--spacing-md) var(--spacing-lg);
+            }
+            
+            .hero-value-badges {
+                gap: var(--spacing-md);
+                margin-top: var(--spacing-xl);
+            }
+            
+            .value-badge {
+                font-size: 0.8rem;
+            }
+            
+            .process-timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                flex-direction: row;
+            }
+            
+            .timeline-marker {
+                margin-right: var(--spacing-lg);
+                margin-left: 0;
+            }
+            
+            .value-grid,
+            .models-grid,
+            .assets-grid,
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-banner {
+                padding: var(--spacing-xl);
+                margin: var(--spacing-xl) 0;
+            }
+            
+            .cta-banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-banner .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-banner .cta-actions .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .asset-recovery-hero {
+                padding: var(--spacing-2xl) 0;
+            }
+            
+            .asset-recovery-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-banner h2 {
+                font-size: 1.6rem;
+            }
+            
+            .case-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .case-icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="donate.html" class="btn-text">Donate</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Asset Recovery Hero -->
+    <section class="asset-recovery-hero">
+        <div class="container">
+            <div class="asset-recovery-hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-chart-line"></i>
+                    Maximize Your IT Asset Value
+                </div>
+                
+                <h1>IT Asset Recovery Services</h1>
+                
+                <!-- <p class="hero-subtitle">
+                    Turn your retired IT equipment into revenue while ensuring complete data security 
+                    and environmental compliance. Professional remarketing with revenue sharing options.
+                </p> -->
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Revenue Generation</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Secure Data Destruction</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Global Market Access</span>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="book-collection.html" class="btn-hero-primary">
+                        <i class="fas fa-calculator"></i>
+                        Get Asset Valuation
+                    </a>
+                    <a href="contact.html" class="btn-hero-secondary">
+                        <i class="fas fa-chart-bar"></i>
+                        View Recovery Rates
+                    </a>
+                </div>
+                
+                <div class="hero-value-badges">
+                    <div class="value-badge">
+                        <i class="fas fa-pound-sign"></i>
+                        <span>Up to 40% Asset Value Recovery</span>
+                    </div>
+                    <div class="value-badge">
+                        <i class="fas fa-globe"></i>
+                        <span>Global Buyer Network</span>
+                    </div>
+                    <div class="value-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>GDPR Compliant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-proposition">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Asset Recovery?</h2>
+                <p class="section-subtitle">Transform IT equipment disposal from a cost center into a revenue stream</p>
+            </div>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Revenue Generation</h3>
+                    <p>Recover significant value from retired IT assets that would otherwise be disposal costs. Our global buyer network ensures optimal pricing.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Data Security</h3>
+                    <p>All assets undergo certified data destruction before remarketing, ensuring complete protection of sensitive business information.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>Extend equipment lifecycle through reuse, reducing electronic waste and supporting your corporate environmental goals.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Cost Reduction</h3>
+                    <p>Offset new technology investments by recovering value from retired equipment while eliminating storage and disposal costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recovery Process -->
+    <section class="recovery-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Asset Recovery Process</h2>
+                <p class="section-subtitle">A streamlined workflow maximizing value while ensuring security and compliance</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Asset Assessment</h4>
+                        <p>Comprehensive evaluation of your IT assets including age, condition, specifications, and current market value.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Valuation Report</h4>
+                        <p>Detailed report showing potential recovery value for each asset category with transparent pricing breakdown.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Secure Collection</h4>
+                        <p>Professional collection with full chain of custody documentation and secure transportation to our facility.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Data Sanitization</h4>
+                        <p>Certified data destruction using industry-standard methods, with full audit trail and compliance documentation.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h4>Remarketing</h4>
+                        <p>Strategic marketing to our global network of verified buyers, ensuring maximum recovery value for your assets.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">6</div>
+                    <div class="timeline-content">
+                        <h4>Revenue Distribution</h4>
+                        <p>Transparent accounting and prompt payment sharing based on the agreed revenue model.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Models -->
+    <section class="revenue-models">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Flexible Revenue Models</h2>
+                <p class="section-subtitle">Choose the recovery option that best fits your business needs</p>
+            </div>
+            
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Revenue Share</h4>
+                    <div class="price">50-70% Share</div>
+                    <ul class="model-features">
+                        <li><i class="fas fa-check"></i> Highest potential returns</li>
+                        <li><i class="fas fa-check"></i> Performance-based pricing</li>
+                        <li><i class="fas fa-check"></i> Transparent sales reporting</li>
+                        <li><i class="fas fa-check"></i> Ideal for high-value assets</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Learn More</a>
+                </div>
+                
+                <div class="model-card featured">
+                    <div class="model-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <h4>Fixed Price Buyout</h4>
+                    <div class="price">Guaranteed Payment</div>
+                    <ul class="model-features">
+                        <li><i class="fas fa-check"></i> Immediate payment</li>
+                        <li><i class="fas fa-check"></i> Price certainty</li>
+                        <li><i class="fas fa-check"></i> No market risk</li>
+                        <li><i class="fas fa-check"></i> Perfect for budgeting</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-icon">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <h4>Charity Donation</h4>
+                    <div class="price">Tax Benefits</div>
+                    <ul class="model-features">
+                        <li><i class="fas fa-check"></i> CSR enhancement</li>
+                        <li><i class="fas fa-check"></i> Tax deductible</li>
+                        <li><i class="fas fa-check"></i> Social impact</li>
+                        <li><i class="fas fa-check"></i> Full documentation</li>
+                    </ul>
+                    <a href="donate.html" class="btn btn-primary">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligible Assets -->
+    <section class="eligible-assets">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Assets with Recovery Value</h2>
+                <p class="section-subtitle">High-value equipment categories with strong remarketing potential</p>
+            </div>
+            
+            <div class="assets-grid">
+                <div class="asset-card">
+                    <div class="asset-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h4>Business Laptops</h4>
+                    <div class="recovery-rate">Up to 45% Value</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Dell Latitude/Precision</li>
+                        <li><i class="fas fa-check"></i> HP EliteBook/ZBook</li>
+                        <li><i class="fas fa-check"></i> Lenovo ThinkPad</li>
+                        <li><i class="fas fa-check"></i> Apple MacBooks</li>
+                    </ul>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4>Servers & Storage</h4>
+                    <div class="recovery-rate">Up to 35% Value</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Dell PowerEdge</li>
+                        <li><i class="fas fa-check"></i> HPE ProLiant</li>
+                        <li><i class="fas fa-check"></i> Cisco UCS</li>
+                        <li><i class="fas fa-check"></i> NetApp/EMC Storage</li>
+                    </ul>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4>Networking Equipment</h4>
+                    <div class="recovery-rate">Up to 40% Value</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Cisco Switches/Routers</li>
+                        <li><i class="fas fa-check"></i> Juniper Networks</li>
+                        <li><i class="fas fa-check"></i> Firewalls & Security</li>
+                        <li><i class="fas fa-check"></i> Wireless Controllers</li>
+                    </ul>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Mobile Devices</h4>
+                    <div class="recovery-rate">Up to 50% Value</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> iPhones & iPads</li>
+                        <li><i class="fas fa-check"></i> Samsung Galaxy</li>
+                        <li><i class="fas fa-check"></i> Business Tablets</li>
+                        <li><i class="fas fa-check"></i> Corporate Mobiles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Successful Asset Recovery</h2>
+                <p class="section-subtitle">Real examples of value recovery for our clients</p>
+            </div>
+            
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4>Financial Services Client</h4>
+                    </div>
+                    <div class="result">£28,500 Revenue Generated</div>
+                    <p>Recovered value from 200 retired laptops and 50 servers during office relocation. Secure data destruction with full compliance documentation provided.</p>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>University IT Refresh</h4>
+                    </div>
+                    <div class="result">£42,000 Revenue Generated</div>
+                    <p>Asset recovery from 500 desktop computers and laboratory equipment. Revenue used to fund new student technology initiatives.</p>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h4>Healthcare Provider</h4>
+                    </div>
+                    <div class="result">£15,200 Revenue Generated</div>
+                    <p>Secure remarketing of medical imaging workstations and IT equipment with guaranteed data sanitization for patient confidentiality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <!-- <section class="section">
+        <div class="container">
+            <div class="cta-banner">
+                <h2>Start Recovering Value Today</h2>
+                <p>Get a free, no-obligation valuation of your IT assets and discover how much value you could recover.</p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calculator"></i>
+                        Get Free Valuation
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Speak to Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Final CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your IT Assets?</h2>
+                <p class="cta-subtitle">
+                    Turn disposal costs into recovered revenue with our professional asset recovery services.
+                </p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calculator"></i>
+                        Get Asset Valuation
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-file-alt"></i>
+                        Download Brochure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                        <span class="footer-logo-text">Renvia IT</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional IT recycling services with a commitment to environmental 
+                        sustainability and data security.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="it-recycling.html">IT Recycling</a></li>
+                        <li><a href="data.html">Data Destruction</a></li>
+                        <li><a href="asset.html">Asset Recovery</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7497 149266</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Milton Keynes, United Kingdom</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Renvia IT Ltd. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

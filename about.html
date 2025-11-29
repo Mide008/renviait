@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
     <title>About Renvia IT - Who We Are</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
     <meta name="description" content="Learn about Renvia IT, our mission, values, and commitment to sustainable, secure IT asset disposal.">
@@ -23,10 +23,520 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="css/pages.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: white;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 1;
+            line-height: 1.5;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .btn-hero-primary {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: #f8f9fa;
+        }
+        
+        .btn-hero-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+        
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .hero-trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: white;
+        }
+        
+        .trust-badge i {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-story {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+        }
+        
+        .story-content h2 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+            font-size: 2.2rem;
+        }
+        
+        .story-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+        
+        .mission-highlight {
+            background: var(--bg-light);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .mission-highlight h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.4rem;
+        }
+        
+        .mission-highlight p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: var(--spacing-sm) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+        
+        .feature-list i {
+            color: var(--primary);
+            margin-right: var(--spacing-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .story-visual {
+            text-align: center;
+            position: relative;
+        }
+        
+        .visual-icon {
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 4rem;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .visual-icon::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: rgba(0, 146, 69, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .impact-section {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f7f4 100%);
+            padding: var(--spacing-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 146, 69, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .impact-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1;
+            display: block;
+        }
+        
+        .impact-label {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .impact-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .values-section {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .value-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .value-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.3rem;
+        }
+        
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .credentials-section {
+            background: var(--bg-light);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .credential-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .credential-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .credential-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .credential-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .credential-card h3 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .credential-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: var(--spacing-xl);
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-sm);
+            }
+            
+            .btn-hero-primary,
+            .btn-hero-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                padding: var(--spacing-md) var(--spacing-lg);
+            }
+            
+            .hero-trust-badges {
+                gap: var(--spacing-md);
+                margin-top: var(--spacing-lg);
+            }
+            
+            .trust-badge {
+                font-size: 0.8rem;
+            }
+            
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+            
+            .story-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .visual-icon {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .impact-grid,
+            .values-grid,
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-hero {
+                padding: var(--spacing-2xl) 0;
+            }
+            
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .credential-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .credential-icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .hero-trust-badges {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+        }
+    </style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
@@ -57,49 +567,121 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- About Hero with White Text -->
+    <section class="about-hero">
         <div class="container">
-            <h1 class="page-title">About Renvia IT</h1>
-            <p class="page-subtitle">
-                Giving enterprise technology a second life through secure, sustainable reuse
-            </p>
+            <div class="about-hero-content">
+                <h1>About Renvia IT</h1>
+                <p class="hero-subtitle">
+                    Giving enterprise technology a second life through secure, sustainable reuse
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="book-collection.html" class="btn-hero-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Free Collection
+                    </a>
+                    <a href="contact.html" class="btn-hero-secondary">
+                        <i class="fas fa-phone"></i>
+                        Contact Our Team
+                    </a>
+                </div>
+                
+                <div class="hero-trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>WEEE Registered</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-truck"></i>
+                        <span>Nationwide Service</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Company Story -->
-    <section class="section">
-        <div class="container about-layout">
-            <div class="about-text-block">
-                <h2>Who We Are</h2>
-                <p>
-                    Renvia IT is a UK-based IT asset recycling and refurbishment company focused on 
-                    secure, compliant, and environmentally responsible disposal of enterprise technology.
-                </p>
-                <p>
-                    We help businesses, public sector organisations, and schools turn unused or 
-                    end-of-life IT equipment into secure, trackable, and measurable impact — 
-                    for both the planet and their bottom line.
-                </p>
+    <section class="about-story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>Who We Are</h2>
+                    <p>
+                        Renvia IT is a UK-based IT asset recycling and refurbishment company focused on 
+                        secure, compliant, and environmentally responsible disposal of enterprise technology.
+                    </p>
+                    <p>
+                        We help businesses, public sector organisations, and schools turn unused or 
+                        end-of-life IT equipment into secure, trackable, and measurable impact — 
+                        for both the planet and their bottom line.
+                    </p>
+                    
+                    <div class="mission-highlight">
+                        <h3>Our Mission</h3>
+                        <p>
+                            To simplify sustainable IT disposal by combining enterprise-grade data security, 
+                            transparent reporting, and circular economy principles.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Zero-landfill approach to e-waste</li>
+                            <li><i class="fas fa-check"></i> Fully auditable, GDPR-compliant processes</li>
+                            <li><i class="fas fa-check"></i> Real, measurable ESG impact for our clients</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="story-visual">
+                    <div class="visual-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="about-highlight">
-                <h3>Our Mission</h3>
-                <p>
-                    To simplify sustainable IT disposal by combining enterprise-grade data security, 
-                    transparent reporting, and circular economy principles.
-                </p>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check"></i> Zero-landfill approach to e-waste</li>
-                    <li><i class="fas fa-check"></i> Fully auditable, GDPR-compliant processes</li>
-                    <li><i class="fas fa-check"></i> Real, measurable ESG impact for our clients</li>
-                </ul>
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Impact in Numbers</h2>
+                <p class="section-subtitle">Real results that demonstrate our commitment to sustainability and security</p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <span class="impact-number">15,000+</span>
+                    <div class="impact-label">Devices Processed</div>
+                    <p class="impact-description">Laptops, servers, and IT equipment securely recycled and remarketed</p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">98%</span>
+                    <div class="impact-label">Landfill Diversion</div>
+                    <p class="impact-description">Of all equipment processed gets reused or responsibly recycled</p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">£2.3M+</span>
+                    <div class="impact-label">Value Recovered</div>
+                    <p class="impact-description">For clients through asset recovery and remarketing programs</p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">500+</span>
+                    <div class="impact-label">Businesses Served</div>
+                    <p class="impact-description">From startups to Fortune 500 companies across the UK</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Values Section -->
-    <section class="section bg-light">
+    <section class="values-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Values</h2>
@@ -108,20 +690,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </p>
             </div>
 
-            <div class="cards-grid">
-                <div class="card">
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <h3>Security First</h3>
                     <p>We treat every device as if it contains critical data, ensuring certified destruction and full audit trails.</p>
                 </div>
-                <div class="card">
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
                     <h3>Sustainable by Design</h3>
                     <p>We prioritise reuse, refurbishment, and component recovery before recycling, maximising value and impact.</p>
                 </div>
-                <div class="card">
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3>Transparent & Compliant</h3>
-                    <p>From chain-of-custody logs to certificates of destruction, you always know where your assets are and what’s happened to them.</p>
+                    <p>From chain-of-custody logs to certificates of destruction, you always know where your assets are and what's happened to them.</p>
                 </div>
-                <div class="card">
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
                     <h3>People & Planet</h3>
                     <p>We work with schools, communities, and partners to ensure technology reaches those who need it most.</p>
                 </div>
@@ -129,8 +726,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Team / Credentials Section -->
-    <section class="section">
+    <!-- Credentials Section -->
+    <section class="credentials-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Built for Modern IT & ESG Teams</h2>
@@ -139,17 +736,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </p>
             </div>
 
-            <div class="about-credentials">
-                <div class="about-credential-block">
-                    <h3>Enterprise-Grade Processes</h3>
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <div class="credential-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Enterprise-Grade Processes</h3>
+                    </div>
                     <p>Designed for IT managers, procurement teams, and sustainability leaders who need documented, repeatable processes at scale.</p>
                 </div>
-                <div class="about-credential-block">
-                    <h3>Certified & Registered</h3>
+                
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <div class="credential-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Certified & Registered</h3>
+                    </div>
                     <p>Fully registered UK business with all relevant waste, data, and environmental certifications and registrations.</p>
                 </div>
-                <div class="about-credential-block">
-                    <h3>Partnership Approach</h3>
+                
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <div class="credential-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Partnership Approach</h3>
+                    </div>
                     <p>We work as a long-term partner, not just a one-off collector — helping you plan, track, and report your IT asset lifecycle.</p>
                 </div>
             </div>
@@ -160,7 +774,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="section section-cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Let’s Build a Better IT Lifecycle</h2>
+                <h2 class="cta-title">Let's Build a Better IT Lifecycle</h2>
                 <p class="cta-subtitle">
                     Talk to our team about upcoming refresh projects, disposal challenges, or ESG goals.
                 </p>
@@ -178,85 +792,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Footer (same as your existing one) -->
-    <!-- copy your current footer exactly from the original file -->
-
     <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
-                    <span class="footer-logo-text">Renvia IT</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                        <span class="footer-logo-text">Renvia IT</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional IT recycling services with a commitment to environmental 
+                        sustainability and data security.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
-                <p class="footer-description">
-                    Professional IT recycling services with a commitment to environmental 
-                    sustainability and data security.
-                </p>
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="it-recycling.html">IT Recycling</a></li>
+                        <li><a href="data.html">Data Destruction</a></li>
+                        <li><a href="asset-recovery.html">Asset Recovery</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7497 149266</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Milton Keynes, United Kingdom</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="footer-section">
-                <h4 class="footer-title">Services</h4>
-                <ul class="footer-links">
-                    <li><a href="services.html">IT Recycling</a></li>
-                    <li><a href="services.html">Data Destruction</a></li>
-                    <li><a href="services.html">Asset Recovery</a></li>
-                    <li><a href="services.html">Compliance</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4 class="footer-title">Company</h4>
-                <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="how-it-works.html">How It Works</a></li>
-                    <li><a href="impact.html">Impact</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4 class="footer-title">Contact</h4>
-                <ul class="footer-contact">
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <span>+44 7497 149266</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Milton Keynes, United Kingdom</span>
-                    </li>
-                </ul>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Renvia IT Ltd. All rights reserved.
+                </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-legal">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms & Conditions</a>
-                <a href="#">Cookie Policy</a>
-            </div>
-            <div class="footer-copyright">
-                © 2025 Renvia IT Ltd. All rights reserved.
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
+    <title>Data Destruction Services - Renvia IT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
+    <meta name="description" content="Certified data destruction services with GDPR compliance, secure chain of custody, and complete audit trails for businesses across the UK.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Data Destruction Page Specific Styles */
+        .data-destruction-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .data-destruction-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .data-destruction-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .data-destruction-hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            color: white;
+        }
+        
+        .data-destruction-hero p {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .methods-section {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .method-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .method-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .method-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .method-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .method-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.4rem;
+        }
+        
+        .method-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .method-features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .method-features li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .method-features li i {
+            color: var(--primary);
+            margin-right: var(--spacing-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .compliance-section {
+            background: var(--bg-light);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .compliance-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .compliance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .compliance-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .process-section {
+            padding: var(--spacing-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 146, 69, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .process-steps {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .process-step {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            position: relative;
+            transition: all var(--transition-normal);
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .process-step h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .process-step p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .certificates-section {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f7f4 100%);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .certificate-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .certificate-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .certificate-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .certificate-card h4 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .certificate-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .media-types-section {
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl) 0;
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .media-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .media-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .media-card h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .media-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .media-card li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+        
+        .media-card li i {
+            color: var(--primary);
+            margin-right: var(--spacing-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-2xl);
+            text-align: center;
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .cta-banner h2 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 2.2rem;
+        }
+        
+        .cta-banner p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .cta-banner .cta-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .data-destruction-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .data-destruction-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .methods-grid,
+            .compliance-grid,
+            .process-steps,
+            .certificates-grid,
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .method-card,
+            .compliance-card,
+            .process-step,
+            .certificate-card,
+            .media-card {
+                padding: var(--spacing-lg);
+            }
+            
+            .cta-banner {
+                padding: var(--spacing-xl);
+                margin: var(--spacing-xl) 0;
+            }
+            
+            .cta-banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-banner .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-banner .cta-actions .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .data-destruction-hero {
+                padding: var(--spacing-2xl) 0;
+            }
+            
+            .data-destruction-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-banner h2 {
+                font-size: 1.6rem;
+            }
+            
+            .certificate-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .certificate-icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="donate.html" class="btn-text">Donate</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Data Destruction Hero
+    <section class="data-destruction-hero">
+        <div class="container">
+            <div class="data-destruction-hero-content">
+                <h1>Secure Data Destruction</h1>
+                <p>Certified data erasure and physical destruction services with GDPR compliance, complete audit trails, and peace of mind for your business.</p>
+                <div class="hero-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Data Destruction
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-file-alt"></i>
+                        Get Certificate Sample
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Destruction Methods -->
+    <section class="methods-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certified Data Destruction Methods</h2>
+                <p class="section-subtitle">Industry-standard approaches tailored to your security requirements and compliance needs</p>
+            </div>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-eraser"></i>
+                    </div>
+                    <h3>Software Data Wiping</h3>
+                    <p>Secure erasure using certified software that overwrites data multiple times, making recovery impossible.</p>
+                    <ul class="method-features">
+                        <li><i class="fas fa-check"></i> NIST 800-88 compliant</li>
+                        <li><i class="fas fa-check"></i> DoD 5220.22-M standards</li>
+                        <li><i class="fas fa-check"></i> Multiple pass overwriting</li>
+                        <li><i class="fas fa-check"></i> Ideal for reusable devices</li>
+                        <li><i class="fas fa-check"></i> Full verification reports</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Physical Destruction</h3>
+                    <p>Complete physical destruction of storage media ensuring absolute data security for high-risk materials.</p>
+                    <ul class="method-features">
+                        <li><i class="fas fa-check"></i> Hard drive shredding</li>
+                        <li><i class="fas fa-check"></i> SSD crushing technology</li>
+                        <li><i class="fas fa-check"></i> Degaussing for magnetic media</li>
+                        <li><i class="fas fa-check"></i> Particle size certification</li>
+                        <li><i class="fas fa-check"></i> Video evidence available</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-magnet"></i>
+                    </div>
+                    <h3>Degaussing</h3>
+                    <p>Powerful magnetic field erasure for traditional magnetic media, permanently destroying data patterns.</p>
+                    <ul class="method-features">
+                        <li><i class="fas fa-check"></i> High-strength degaussing</li>
+                        <li><i class="fas fa-check"></i> Ideal for tapes & floppies</li>
+                        <li><i class="fas fa-check"></i> Instant data destruction</li>
+                        <li><i class="fas fa-check"></i> No heat or debris</li>
+                        <li><i class="fas fa-check"></i> Media reuse prevention</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Standards -->
+    <section class="compliance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Compliance & Security Standards</h2>
+                <p class="section-subtitle">Meeting the highest standards for data protection and regulatory compliance</p>
+            </div>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h4>GDPR Compliance</h4>
+                    <p>Full alignment with General Data Protection Regulation requirements for personal data protection and privacy.</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>NIST 800-88</h4>
+                    <p>Adherence to National Institute of Standards and Technology guidelines for media sanitization.</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h4>ISO 27001</h4>
+                    <p>Processes aligned with international information security management system standards.</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h4>Data Protection Act 2018</h4>
+                    <p>Compliance with UK data protection legislation and information commissioner requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Data Destruction Process</h2>
+                <p class="section-subtitle">A secure, documented workflow ensuring complete data eradication and compliance</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Asset Identification</h4>
+                    <p>Comprehensive inventory of all data-bearing devices with serial number tracking and asset tagging.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Secure Collection</h4>
+                    <p>Tamper-evident packaging and secure transportation with full chain of custody documentation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Method Selection</h4>
+                    <p>Assessment of media types and risk levels to determine appropriate destruction methodology.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Destruction Execution</h4>
+                    <p>Certified data wiping or physical destruction performed in our secure facility with full monitoring.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>Verification & Audit</h4>
+                    <p>Comprehensive verification of destruction success and generation of audit trail documentation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h4>Certificate Issuance</h4>
+                    <p>Formal certificates of destruction provided for your compliance records and audit requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section class="certificates-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive Documentation</h2>
+                <p class="section-subtitle">Complete audit trail and certification for your compliance and reporting needs</p>
+            </div>
+            
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>Certificate of Destruction</h4>
+                    </div>
+                    <p>Formal certification detailing the destruction method, date, and serial numbers of processed devices for your compliance records.</p>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h4>Asset Inventory Report</h4>
+                    </div>
+                    <p>Detailed listing of all processed equipment including make, model, serial numbers, and destruction methodology applied.</p>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Compliance Pack</h4>
+                    </div>
+                    <p>Complete documentation package including GDPR compliance statements, environmental reports, and audit trail documentation.</p>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h4>Destruction Evidence</h4>
+                    </div>
+                    <p>Optional video or photographic evidence of physical destruction for high-security requirements and internal audits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Types -->
+    <section class="media-types-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Media Types We Destroy</h2>
+                <p class="section-subtitle">Comprehensive data destruction for all types of storage media and devices</p>
+            </div>
+            
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="media-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h4>Hard Drives</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> HDD (3.5", 2.5")</li>
+                        <li><i class="fas fa-check"></i> Enterprise Drives</li>
+                        <li><i class="fas fa-check"></i> External HDDs</li>
+                        <li><i class="fas fa-check"></i> NAS Drives</li>
+                    </ul>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h4>Solid State Drives</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> SATA SSDs</li>
+                        <li><i class="fas fa-check"></i> NVMe Drives</li>
+                        <li><i class="fas fa-check"></i> M.2 SSDs</li>
+                        <li><i class="fas fa-check"></i> PCIe SSDs</li>
+                    </ul>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4>Server Storage</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> RAID Arrays</li>
+                        <li><i class="fas fa-check"></i> SAN Storage</li>
+                        <li><i class="fas fa-check"></i> Server HDDs/SSDs</li>
+                        <li><i class="fas fa-check"></i> Blade Storage</li>
+                    </ul>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-icon">
+                        <i class="fas fa-tape"></i>
+                    </div>
+                    <h4>Tape & Legacy Media</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Backup Tapes</li>
+                        <li><i class="fas fa-check"></i> LTO Cartridges</li>
+                        <li><i class="fas fa-check"></i> Floppy Disks</li>
+                        <li><i class="fas fa-check"></i> Zip Disks</li>
+                    </ul>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Mobile Devices</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Smartphones</li>
+                        <li><i class="fas fa-check"></i> Tablets</li>
+                        <li><i class="fas fa-check"></i> USBs & Memory Cards</li>
+                        <li><i class="fas fa-check"></i> Portable SSDs</li>
+                    </ul>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-icon">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <h4>Optical Media</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> CDs & DVDs</li>
+                        <li><i class="fas fa-check"></i> Blu-ray Discs</li>
+                        <li><i class="fas fa-check"></i> Optical Archive</li>
+                        <li><i class="fas fa-check"></i> Media Cards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner">
+                <h2>Secure Your Data Today</h2>
+                <p>Protect your business from data breaches and ensure regulatory compliance with our certified data destruction services.</p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Destruction
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-question-circle"></i>
+                        Ask About Compliance
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Need Certified Data Destruction?</h2>
+                <p class="cta-subtitle">
+                    Get a free consultation and quote for your data security requirements.
+                </p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Service
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-file-alt"></i>
+                        Request Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                        <span class="footer-logo-text">Renvia IT</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional IT recycling services with a commitment to environmental 
+                        sustainability and data security.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="it-recycling.html">IT Recycling</a></li>
+                        <li><a href="data.html">Data Destruction</a></li>
+                        <li><a href="asset.html">Asset Recovery</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7497 149266</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Milton Keynes, United Kingdom</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Renvia IT Ltd. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

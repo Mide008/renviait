@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
+    <title>Cookie Policy - Renvia IT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
+    <meta name="description" content="Learn how Renvia IT uses cookies and similar technologies to enhance your website experience and how you can manage your preferences.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Cookie Policy Specific Styles */
+        .cookie-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .cookie-section {
+            margin-bottom: var(--spacing-2xl);
+            padding: var(--spacing-lg);
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        
+        .cookie-section h2 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cookie-section h2 i {
+            margin-right: var(--spacing-sm);
+            color: var(--primary);
+        }
+        
+        .cookie-section h3 {
+            color: var(--text-primary);
+            margin: var(--spacing-lg) 0 var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+        
+        .cookie-section h4 {
+            color: var(--text-primary);
+            margin: var(--spacing-md) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+        
+        .cookie-section p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .cookie-section ul, .cookie-section ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+        
+        .cookie-section li {
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .cookie-section a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .cookie-section a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .cookie-highlight {
+            background: rgba(0, 146, 69, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        .cookie-warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        
+        .cookie-table th {
+            background: var(--primary);
+            color: white;
+            text-align: left;
+            padding: var(--spacing-md);
+            font-weight: 600;
+        }
+        
+        .cookie-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+        
+        .cookie-table tr:nth-child(even) {
+            background: rgba(0, 146, 69, 0.02);
+        }
+        
+        .cookie-table tr:hover {
+            background: rgba(0, 146, 69, 0.05);
+        }
+        
+        .cookie-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: var(--spacing-xs);
+        }
+        
+        .badge-necessary {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+        
+        .badge-preferences {
+            background: #E3F2FD;
+            color: #1976D2;
+        }
+        
+        .badge-analytics {
+            background: #E8F5E8;
+            color: #2E7D32;
+        }
+        
+        .badge-marketing {
+            background: #FFF3E0;
+            color: #EF6C00;
+        }
+        
+        .cookie-controls {
+            background: var(--bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .control-group {
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .control-group:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .cookie-toggle {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .toggle-label {
+            flex: 1;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: var(--primary);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .toggle-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        .browser-instructions {
+            background: var(--bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .browser-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .browser-item {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+        
+        .browser-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .contact-cookies {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f7f4 100%);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+        
+        @media (max-width: 768px) {
+            .cookie-content {
+                padding: var(--spacing-md) 0;
+            }
+            
+            .cookie-section {
+                padding: var(--spacing-md);
+            }
+            
+            .cookie-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .browser-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="donate.html" class="btn-text">Donate</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Cookie Policy</h1>
+            <p class="page-subtitle">
+                How we use cookies and similar technologies on our website
+            </p>
+            <p class="page-description">
+                Last updated: March 2025
+            </p>
+        </div>
+    </section>
+
+    <!-- Cookie Policy Content -->
+    <section class="section">
+        <div class="container">
+            <div class="cookie-content">
+                <div class="cookie-section">
+                    <h2><i class="fas fa-info-circle"></i> What Are Cookies?</h2>
+                    <p>
+                        Cookies are small text files that are placed on your computer or mobile device when you visit our website. 
+                        They are widely used to make websites work more efficiently and provide information to the website owners.
+                    </p>
+                    <p>
+                        Cookies help us understand how you interact with our website, remember your preferences, 
+                        and improve your overall experience.
+                    </p>
+                    <div class="cookie-highlight">
+                        <p>
+                            <strong>Important:</strong> By using our website, you consent to the use of cookies in accordance with this policy. 
+                            You can manage your cookie preferences at any time using the controls below.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cookie-section">
+                    <h2><i class="fas fa-cookie-bite"></i> Types of Cookies We Use</h2>
+                    
+                    <h3>Essential Cookies</h3>
+                    <p>
+                        These cookies are necessary for the website to function and cannot be switched off. 
+                        They are usually only set in response to actions made by you.
+                    </p>
+                    
+                    <h3>Performance Cookies</h3>
+                    <p>
+                        These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site.
+                    </p>
+                    
+                    <h3>Functional Cookies</h3>
+                    <p>
+                        These cookies enable the website to provide enhanced functionality and personalization.
+                    </p>
+                    
+                    <h3>Targeting Cookies</h3>
+                    <p>
+                        These cookies may be set through our site by our advertising partners to build a profile of your interests.
+                    </p>
+                </div>
+
+                <div class="cookie-section">
+                    <h2><i class="fas fa-list"></i> Detailed Cookie Information</h2>
+                    <p>Below is a detailed list of the cookies we use on our website:</p>
+                    
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie Name</th>
+                                <th>Type</th>
+                                <th>Purpose</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>cookie_consent</strong></td>
+                                <td><span class="cookie-badge badge-necessary">Necessary</span></td>
+                                <td>Stores your cookie preferences</td>
+                                <td>1 year</td>
+                            </tr>
+                            <tr>
+                                <td><strong>session_id</strong></td>
+                                <td><span class="cookie-badge badge-necessary">Necessary</span></td>
+                                <td>Maintains your session across page requests</td>
+                                <td>Session</td>
+                            </tr>
+                            <tr>
+                                <td><strong>_ga</strong></td>
+                                <td><span class="cookie-badge badge-analytics">Analytics</span></td>
+                                <td>Google Analytics - distinguishes users</td>
+                                <td>2 years</td>
+                            </tr>
+                            <tr>
+                                <td><strong>_gid</strong></td>
+                                <td><span class="cookie-badge badge-analytics">Analytics</span></td>
+                                <td>Google Analytics - distinguishes users</td>
+                                <td>24 hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>_gat</strong></td>
+                                <td><span class="cookie-badge badge-analytics">Analytics</span></td>
+                                <td>Google Analytics - throttles request rate</td>
+                                <td>1 minute</td>
+                            </tr>
+                            <tr>
+                                <td><strong>language_pref</strong></td>
+                                <td><span class="cookie-badge badge-preferences">Preferences</span></td>
+                                <td>Stores your language preference</td>
+                                <td>1 year</td>
+                            </tr>
+                            <tr>
+                                <td><strong>theme_preference</strong></td>
+                                <td><span class="cookie-badge badge-preferences">Preferences</span></td>
+                                <td>Remembers your theme preference (light/dark)</td>
+                                <td>1 year</td>
+                            </tr>
+                            <tr>
+                                <td><strong>fr</strong></td>
+                                <td><span class="cookie-badge badge-marketing">Marketing</span></td>
+                                <td>Facebook Pixel - ad delivery and measurement</td>
+                                <td>3 months</td>
+                            </tr>
+                            <tr>
+                                <td><strong>_fbp</strong></td>
+                                <td><span class="cookie-badge badge-marketing">Marketing</span></td>
+                                <td>Facebook Pixel - stores browser details</td>
+                                <td>3 months</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cookie-section">
+                    <h2><i class="fas fa-sliders-h"></i> Cookie Preferences</h2>
+                    <p>
+                        You can manage your cookie preferences using the controls below. 
+                        Please note that disabling certain types of cookies may impact your experience on our website.
+                    </p>
+                    
+                    <div class="cookie-controls">
+                        <div class="control-group">
+                            <div class="cookie-toggle">
+                                <span class="toggle-label">Essential Cookies</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked disabled>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <p class="toggle-description">
+                                These cookies are necessary for the website to function and cannot be disabled. 
+                                They do not store any personally identifiable information.
+                            </p>
+                        </div>
+                        
+                        <div class="control-group">
+                            <div class="cookie-toggle">
+                                <span class="toggle-label">Performance & Analytics Cookies</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="analyticsCookies" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <p class="toggle-description">
+                                These cookies allow us to count visits and traffic sources so we can measure and improve site performance.
+                            </p>
+                        </div>
+                        
+                        <div class="control-group">
+                            <div class="cookie-toggle">
+                                <span class="toggle-label">Functional Cookies</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="functionalCookies" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <p class="toggle-description">
+                                These cookies enable enhanced functionality and personalization, such as remembering your preferences.
+                            </p>
+                        </div>
+                        
+                        <div class="control-group">
+                            <div class="cookie-toggle">
+                                <span class="toggle-label">Marketing Cookies</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="marketingCookies">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <p class="toggle-description">
+                                These cookies may be set by advertising partners to build a profile of your interests.
+                            </p>
+                        </div>
+                        
+                        <button class="btn btn-primary" onclick="saveCookiePreferences()">
+                            <i class="fas fa-save"></i> Save Preferences
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cookie-section">
+                    <h2><i class="fas fa-cog"></i> Managing Cookies in Your Browser</h2>
+                    <p>
+                        You can also manage cookies through your web browser settings. 
+                        Most browsers allow you to refuse or accept cookies, and to delete existing ones.
+                    </p>
+                    
+                    <div class="browser-instructions">
+                        <h4>Browser-Specific Instructions:</h4>
+                        <div class="browser-list">
+                            <div class="browser-item">
+                                <div class="browser-icon">
+                                    <i class="fab fa-chrome"></i>
+                                </div>
+                                <h5>Google Chrome</h5>
+                                <p>Settings → Privacy and security → Cookies and other site data</p>
+                            </div>
+                            <div class="browser-item">
+                                <div class="browser-icon">
+                                    <i class="fab fa-firefox"></i>
+                                </div>
+                                <h5>Mozilla Firefox</h5>
+                                <p>Options → Privacy & Security → Cookies and Site Data</p>
+                            </div>
+                            <div class="browser-item">
+                                <div class="browser-icon">
+                                    <i class="fab fa-safari"></i>
+                                </div>
+                                <h5>Apple Safari</h5>
+                                <p>Preferences → Privacy → Cookies and website data</p>
+                            </div>
+                            <div class="browser-item">
+                                <div class="browser-icon">
+                                    <i class="fab fa-edge"></i>
+                                </div>
+                                <h5>Microsoft Edge</h5>
+                                <p>Settings → Cookies and site permissions → Cookies and site data</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cookie-warning">
+                        <p>
+                            <strong>Note:</strong> Blocking all cookies may impact your experience on our website and 
+                            many other websites. Some features may not work properly if cookies are disabled.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cookie-section">
+                    <h2><i class="fas fa-shield-alt"></i> Third-Party Cookies</h2>
+                    <p>
+                        We use some third-party services that may set cookies on your device. These include:
+                    </p>
+                    
+                    <h4>Google Analytics</h4>
+                    <p>
+                        We use Google Analytics to understand how visitors interact with our website. 
+                        This helps us improve our content and user experience.
+                    </p>
+                    
+                    <h4>Google Tag Manager</h4>
+                    <p>
+                        We use Google Tag Manager to manage our tracking codes and scripts.
+                    </p>
+                    
+                    <h4>Social Media Platforms</h4>
+                    <p>
+                        We may use social media plugins that can set cookies to enable sharing and interaction features.
+                    </p>
+                    
+                    <p>
+                        For more information about how these third parties use cookies, please refer to their respective privacy policies.
+                    </p>
+                </div>
+
+                <div class="cookie-section">
+                    <h2><i class="fas fa-sync-alt"></i> Updates to This Policy</h2>
+                    <p>
+                        We may update this Cookie Policy from time to time to reflect changes in technology, 
+                        legislation, or our services. We encourage you to check this page periodically for any updates.
+                    </p>
+                    <p>
+                        Significant changes to this policy will be communicated through our website or via email where appropriate.
+                    </p>
+                </div>
+
+                <div class="contact-cookies">
+                    <h2>Questions About Cookies?</h2>
+                    <p>
+                        If you have any questions about our use of cookies or this Cookie Policy, please contact us:
+                    </p>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:privacy@renviait.co.uk">privacy@renviait.co.uk</a><br>
+                        <strong>Phone:</strong> +44 7497 149266<br>
+                        <strong>Address:</strong> Milton Keynes, United Kingdom
+                    </p>
+                    <p>
+                        For general inquiries, please contact <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Need help with IT recycling?</h2>
+                <p class="cta-subtitle">
+                    Get in touch with our team for professional IT disposal services.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        Contact Us
+                    </a>
+                    <a href="book-collection.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Collection
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                        <span class="footer-logo-text">Renvia IT</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional IT recycling services with a commitment to environmental 
+                        sustainability and data security.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="it-recycling.html">IT Recycling</a></li>
+                        <li><a href="data.html">Data Destruction</a></li>
+                        <li><a href="asset.html">Asset Recovery</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7497 149266</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Milton Keynes, United Kingdom</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Renvia IT Ltd. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Cookie Preferences Management
+        function saveCookiePreferences() {
+            const analytics = document.getElementById('analyticsCookies').checked;
+            const functional = document.getElementById('functionalCookies').checked;
+            const marketing = document.getElementById('marketingCookies').checked;
+            
+            // In a real implementation, you would set cookies based on these preferences
+            // For demonstration, we'll just show an alert
+            alert('Cookie preferences saved! Analytics: ' + analytics + ', Functional: ' + functional + ', Marketing: ' + marketing);
+            
+            // You would typically implement something like:
+            // document.cookie = "analytics_cookies=" + analytics + "; path=/; max-age=31536000";
+            // document.cookie = "functional_cookies=" + functional + "; path=/; max-age=31536000";
+            // document.cookie = "marketing_cookies=" + marketing + "; path=/; max-age=31536000";
+        }
+        
+        // Load saved preferences (simplified example)
+        document.addEventListener('DOMContentLoaded', function() {
+            // In a real implementation, you would read existing cookie preferences
+            // and set the toggle states accordingly
+        });
+    </script>
+</body>
+</html>

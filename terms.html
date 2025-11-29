@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
-<!-- End Google Tag Manager -->
-
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
     <title>Terms & Conditions - Renvia IT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
-    <meta name="description" content="Read the terms and conditions for using Renvia IT’s services, including collection, recycling, and data destruction of IT assets.">
+    <meta name="description" content="Terms and conditions governing the use of Renvia IT's IT recycling and data destruction services.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +23,189 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="css/pages.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Terms Page Specific Styles */
+        .terms-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .terms-section {
+            margin-bottom: var(--spacing-2xl);
+            padding: var(--spacing-lg);
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        
+        .terms-section h2 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terms-section h2 i {
+            margin-right: var(--spacing-sm);
+            color: var(--primary);
+        }
+        
+        .terms-section h3 {
+            color: var(--text-primary);
+            margin: var(--spacing-lg) 0 var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+        
+        .terms-section h4 {
+            color: var(--text-primary);
+            margin: var(--spacing-md) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+        
+        .terms-section p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .terms-section ul, .terms-section ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+        
+        .terms-section li {
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .terms-section a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .terms-section a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .terms-highlight {
+            background: rgba(0, 146, 69, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        .terms-warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        
+        .terms-table th {
+            background: var(--primary);
+            color: white;
+            text-align: left;
+            padding: var(--spacing-md);
+            font-weight: 600;
+        }
+        
+        .terms-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .terms-table tr:nth-child(even) {
+            background: rgba(0, 146, 69, 0.02);
+        }
+        
+        .terms-table tr:hover {
+            background: rgba(0, 146, 69, 0.05);
+        }
+        
+        .definitions-list {
+            background: var(--bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .definitions-list dt {
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: var(--spacing-md);
+        }
+        
+        .definitions-list dd {
+            margin-left: 0;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+        }
+        
+        .contact-terms {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f7f4 100%);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .clause-number {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: var(--spacing-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .terms-content {
+                padding: var(--spacing-md) 0;
+            }
+            
+            .terms-section {
+                padding: var(--spacing-md);
+            }
+            
+            .terms-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .clause-number {
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
@@ -62,251 +239,410 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1 class="page-title">Terms &amp; Conditions</h1>
+            <h1 class="page-title">Terms & Conditions</h1>
             <p class="page-subtitle">
-                Please read these terms carefully before using our services
+                Governing the use of our IT recycling and data destruction services
+            </p>
+            <p class="page-description">
+                Last updated: November 2025
             </p>
         </div>
     </section>
 
     <!-- Terms Content -->
     <section class="section">
-        <div class="container legal-container">
-            <div class="legal-meta">
-                <p><strong>Last updated:</strong> January 2025</p>
-                <p><strong>Company:</strong> Renvia IT Ltd (Company No. 16825317)</p>
-                <p><strong>Registered Address:</strong> 9, 399 Centro Building, MK9 2PG, Milton Keynes, United Kingdom</p>
-            </div>
+        <div class="container">
+            <div class="terms-content">
+                <div class="terms-section">
+                    <h2><i class="fas fa-gavel"></i> Agreement to Terms</h2>
+                    <p>
+                        By using Renvia IT Ltd's services ("Services"), you ("Client", "you", "your") agree to be bound by these Terms and Conditions. 
+                        These terms govern our relationship with you in relation to the provision of IT recycling, data destruction, and related services.
+                    </p>
+                    <div class="terms-highlight">
+                        <p>
+                            <strong>Important:</strong> Please read these terms carefully before using our Services. 
+                            If you disagree with any part of these terms, you may not access our Services.
+                        </p>
+                    </div>
+                </div>
 
-            <div class="legal-toc">
-                <h2>Contents</h2>
-                <ol>
-                    <li><a href="#scope">1. Scope of These Terms</a></li>
-                    <li><a href="#services">2. Services Provided</a></li>
-                    <li><a href="#collections">3. Collections & Access</a></li>
-                    <li><a href="#data-destruction">4. Data Destruction & Responsibility</a></li>
-                    <li><a href="#equipment-ownership">5. Equipment Ownership & Title</a></li>
-                    <li><a href="#fees">6. Fees, Quotes & Payment</a></li>
-                    <li><a href="#liability">7. Liability & Limitations</a></li>
-                    <li><a href="#client-obligations">8. Client Obligations</a></li>
-                    <li><a href="#use-of-website">9. Use of the Website</a></li>
-                    <li><a href="#changes">10. Changes to These Terms</a></li>
-                    <li><a href="#contact">11. Contact Details</a></li>
-                </ol>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-book"></i> Definitions</h2>
+                    <div class="definitions-list">
+                        <dl>
+                            <dt>"Renvia IT", "we", "us", "our"</dt>
+                            <dd>Refers to Renvia IT Ltd, a company registered in England and Wales.</dd>
+                            
+                            <dt>"Client", "you", "your"</dt>
+                            <dd>Refers to the individual or entity using our Services.</dd>
+                            
+                            <dt>"Services"</dt>
+                            <dd>Refers to IT equipment collection, data destruction, recycling, and related services.</dd>
+                            
+                            <dt>"Equipment"</dt>
+                            <dd>Refers to IT assets provided by the Client for processing.</dd>
+                            
+                            <dt>"Collection"</dt>
+                            <dd>Refers to the scheduled pickup of Equipment from the Client's premises.</dd>
+                            
+                            <dt>"Certificate of Destruction"</dt>
+                            <dd>Refers to documentation provided upon completion of data destruction services.</dd>
+                        </dl>
+                    </div>
+                </div>
 
-            <div class="legal-section" id="scope">
-                <h2>1. Scope of These Terms</h2>
-                <p>
-                    These Terms &amp; Conditions (<strong>“Terms”</strong>) govern your use of the services 
-                    provided by Renvia IT Ltd (<strong>“Renvia”</strong>, <strong>“we”</strong>, <strong>“us”</strong>, <strong>“our”</strong>) including, 
-                    but not limited to, the collection, processing, recycling, refurbishment, and 
-                    data destruction of IT equipment, as well as your use of our website and online tools.
-                </p>
-                <p>
-                    By booking a collection, requesting a quote, or using our website, you agree to be bound by these Terms. 
-                    If you do not agree with these Terms, you should not use our services.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-clipboard-list"></i> Service Overview</h2>
+                    
+                    <h3><span class="clause-number">1</span> Service Description</h3>
+                    <p>
+                        Renvia IT provides professional IT recycling services including but not limited to:
+                    </p>
+                    <ul>
+                        <li>Secure collection of IT equipment from client premises</li>
+                        <li>Data destruction and sanitization services</li>
+                        <li>IT asset recycling and refurbishment</li>
+                        <li>Compliance documentation and reporting</li>
+                        <li>Environmental disposal of non-reusable equipment</li>
+                    </ul>
+                    
+                    <h3><span class="clause-number">2</span> Service Levels</h3>
+                    <p>We offer two primary service levels:</p>
+                    
+                    <table class="terms-table">
+                        <thead>
+                            <tr>
+                                <th>Service Level</th>
+                                <th>Includes</th>
+                                <th>Documentation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Standard Service</strong></td>
+                                <td>Basic collection, data destruction, recycling</td>
+                                <td>Batch certificates of destruction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enhanced Service</strong></td>
+                                <td>Item-level processing, detailed reporting</td>
+                                <td>Individual asset certificates, ESG reports</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="legal-section" id="services">
-                <h2>2. Services Provided</h2>
-                <p>
-                    Renvia provides IT asset collection, data destruction, refurbishment, recycling, 
-                    and related reporting services for organisations in the United Kingdom.
-                </p>
-                <p>
-                    The exact scope of services, including any resale, reuse, or donation arrangements, 
-                    will be confirmed in writing as part of your quote or service agreement.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-handshake"></i> Client Responsibilities</h2>
+                    
+                    <h3><span class="clause-number">3</span> Equipment Preparation</h3>
+                    <p>Clients are responsible for:</p>
+                    <ul>
+                        <li>Providing accurate equipment lists and descriptions</li>
+                        <li>Ensuring equipment is accessible at the scheduled collection time</li>
+                        <li>Notifying us of any hazardous materials or special handling requirements</li>
+                        <li>Backing up any data they wish to retain before collection</li>
+                    </ul>
+                    
+                    <h3><span class="clause-number">4</span> Site Access & Safety</h3>
+                    <p>Clients must provide:</p>
+                    <ul>
+                        <li>Safe and clear access to equipment locations</li>
+                        <li>Relevant health and safety information for the site</li>
+                        <li>Any necessary security clearance for our personnel</li>
+                        <li>Adequate parking and loading facilities</li>
+                    </ul>
+                    
+                    <div class="terms-warning">
+                        <p>
+                            <strong>Warning:</strong> Failure to provide safe access or accurate equipment information 
+                            may result in additional charges or service cancellation.
+                        </p>
+                    </div>
+                </div>
 
-            <div class="legal-section" id="collections">
-                <h2>3. Collections &amp; Access</h2>
-                <p>
-                    You are responsible for ensuring that our team has safe and reasonable access to the 
-                    equipment to be collected at the agreed date and time.
-                </p>
-                <p>
-                    We reserve the right to re-schedule or refuse a collection if conditions on-site are 
-                    unsafe, significantly different to those described, or if access is not possible.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-shield-alt"></i> Data Destruction & Security</h2>
+                    
+                    <h3><span class="clause-number">5</span> Data Handling</h3>
+                    <p>
+                        We implement industry-standard data destruction methods aligned with GDPR requirements 
+                        and recognized wiping protocols including NIST and DoD standards.
+                    </p>
+                    
+                    <h3><span class="clause-number">6</span> Destruction Methods</h3>
+                    <ul>
+                        <li><strong>Software Wiping:</strong> For reusable devices using certified data erasure software</li>
+                        <li><strong>Physical Destruction:</strong> For high-risk media or non-functional devices</li>
+                        <li><strong>Degaussing:</strong> For magnetic media where appropriate</li>
+                    </ul>
+                    
+                    <h3><span class="clause-number">7</span> Certificates</h3>
+                    <p>
+                        Certificates of Destruction are provided upon completion of services. 
+                        Standard service includes batch certificates, while enhanced service includes individual asset certificates.
+                    </p>
+                </div>
 
-            <div class="legal-section" id="data-destruction">
-                <h2>4. Data Destruction &amp; Responsibility</h2>
-                <p>
-                    Where data destruction is included in the service, we use industry-recognised methods 
-                    in line with agreed standards (e.g., NIST, DoD-equivalent wiping or physical destruction).
-                </p>
-                <p>
-                    It remains your responsibility to ensure that you have appropriate backups and internal 
-                    approvals before assets are handed over to us. Once devices are processed, data cannot 
-                    be recovered.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-pound-sign"></i> Pricing & Payment</h2>
+                    
+                    <h3><span class="clause-number">8</span> Quotations</h3>
+                    <p>
+                        All quotations are valid for 30 days from the date of issue. Prices are subject to change 
+                        if the scope of work changes or if inaccurate information is provided.
+                    </p>
+                    
+                    <h3><span class="clause-number">9</span> Payment Terms</h3>
+                    <ul>
+                        <li>Invoices are issued upon completion of services</li>
+                        <li>Payment is due within 30 days of invoice date</li>
+                        <li>Late payments may incur interest at 8% above the Bank of England base rate</li>
+                        <li>Collection may be refused for clients with outstanding balances</li>
+                    </ul>
+                    
+                    <h3><span class="clause-number">10</span> Additional Charges</h3>
+                    <p>Additional charges may apply for:</p>
+                    <ul>
+                        <li>Out-of-hours or emergency collections</li>
+                        <li>Remote or difficult-to-access locations</li>
+                        <li>Special handling requirements</li>
+                        <li>Enhanced documentation or reporting</li>
+                    </ul>
+                </div>
 
-            <div class="legal-section" id="equipment-ownership">
-                <h2>5. Equipment Ownership &amp; Title</h2>
-                <p>
-                    By handing over equipment, you confirm that you are the legal owner or have full authority 
-                    to authorise its disposal, reuse, resale, or recycling.
-                </p>
-                <p>
-                    Unless otherwise agreed in writing, title to the equipment may transfer to Renvia upon 
-                    collection or following completion of agreed processing and reporting steps.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-ban"></i> Limitations & Liabilities</h2>
+                    
+                    <h3><span class="clause-number">11</span> Service Limitations</h3>
+                    <p>
+                        While we take every precaution to protect data and equipment, our liability is limited to:
+                    </p>
+                    <ul>
+                        <li>The value of the service provided</li>
+                        <li>Direct damages only, excluding consequential losses</li>
+                        <li>Maximum liability not exceeding 125% of the service fee</li>
+                    </ul>
+                    
+                    <h3><span class="clause-number">12</span> Force Majeure</h3>
+                    <p>
+                        We are not liable for delays or failures in performance resulting from circumstances 
+                        beyond our reasonable control, including but not limited to acts of God, government 
+                        actions, war, terrorism, or severe weather conditions.
+                    </p>
+                    
+                    <div class="terms-highlight">
+                        <p>
+                            <strong>Note:</strong> Clients are responsible for ensuring they have adequate 
+                            insurance coverage for their equipment until collection is completed.
+                        </p>
+                    </div>
+                </div>
 
-            <div class="legal-section" id="fees">
-                <h2>6. Fees, Quotes &amp; Payment</h2>
-                <p>
-                    Some services may be provided free of charge (for example, certain collections) while 
-                    others may incur fees or generate revenue share or rebate for you.
-                </p>
-                <p>
-                    Any charges, rebates, or revenue-sharing arrangements will be confirmed in writing in 
-                    your quote or service agreement. Quotes may be subject to change if the volume, 
-                    condition, or type of equipment differs from that originally described.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-recycle"></i> Environmental Compliance</h2>
+                    
+                    <h3><span class="clause-number">13</span> Recycling Standards</h3>
+                    <p>
+                        We operate in compliance with the Waste Electrical and Electronic Equipment (WEEE) 
+                        Regulations and other relevant environmental legislation.
+                    </p>
+                    
+                    <h3><span class="clause-number">14</span> Downstream Partners</h3>
+                    <p>
+                        All recycling partners are vetted for environmental compliance and adherence to 
+                        responsible recycling practices. We maintain documentation of all downstream processing.
+                    </p>
+                    
+                    <h3><span class="clause-number">15</span> Landfill Diversion</h3>
+                    <p>
+                        We prioritize reuse and recycling, aiming to divert over 95% of collected equipment 
+                        from landfill. Non-recyclable materials are disposed of through approved channels.
+                    </p>
+                </div>
 
-            <div class="legal-section" id="liability">
-                <h2>7. Liability &amp; Limitations</h2>
-                <p>
-                    We will exercise reasonable care and skill in providing our services. However, to the maximum 
-                    extent permitted by law, we shall not be liable for indirect or consequential losses, 
-                    including loss of profit, revenue, or business opportunity.
-                </p>
-                <p>
-                    Nothing in these Terms excludes or limits our liability for death or personal injury caused by 
-                    our negligence, fraud, or any other liability which cannot be excluded under applicable law.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-calendar-times"></i> Cancellation & Changes</h2>
+                    
+                    <h3><span class="clause-number">16</span> Cancellation Policy</h3>
+                    <p>
+                        Collections may be cancelled or rescheduled without charge with at least 48 hours' notice. 
+                        Cancellations with less than 48 hours' notice may incur a cancellation fee.
+                    </p>
+                    
+                    <h3><span class="clause-number">17</span> Service Changes</h3>
+                    <p>
+                        Changes to the scope of work or service requirements must be communicated in writing 
+                        and may result in price adjustments or schedule changes.
+                    </p>
+                </div>
 
-            <div class="legal-section" id="client-obligations">
-                <h2>8. Client Obligations</h2>
-                <p>
-                    You agree to provide accurate information when booking collections, requesting quotes, 
-                    or using our tools, and to notify us promptly of any changes.
-                </p>
-                <p>
-                    You are responsible for complying with your own internal governance, IT, and data protection 
-                    policies when engaging our services.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-file-contract"></i> Intellectual Property</h2>
+                    
+                    <h3><span class="clause-number">18</span> Documentation</h3>
+                    <p>
+                        All certificates, reports, and documentation provided remain our intellectual property 
+                        and are licensed to the client for their internal use only.
+                    </p>
+                    
+                    <h3><span class="clause-number">19</span> Brand Usage</h3>
+                    <p>
+                        Clients may not use our name, logo, or service marks without prior written consent. 
+                        We may use client names in our marketing materials unless specifically requested not to.
+                    </p>
+                </div>
 
-            <div class="legal-section" id="use-of-website">
-                <h2>9. Use of the Website</h2>
-                <p>
-                    You agree not to misuse our website, attempt unauthorised access, introduce malicious code, 
-                    or use our platforms in any way that may damage, disable, or impair their operation.
-                </p>
-                <p>
-                    We may suspend or restrict access to the website or certain features for security, maintenance, 
-                    or operational reasons.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-balance-scale"></i> Governing Law & Disputes</h2>
+                    
+                    <h3><span class="clause-number">20</span> Governing Law</h3>
+                    <p>
+                        These terms are governed by and construed in accordance with the laws of England and Wales. 
+                        Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.
+                    </p>
+                    
+                    <h3><span class="clause-number">21</span> Dispute Resolution</h3>
+                    <p>
+                        In the event of a dispute, both parties agree to attempt resolution through good faith 
+                        negotiations before pursuing formal legal action.
+                    </p>
+                </div>
 
-            <div class="legal-section" id="changes">
-                <h2>10. Changes to These Terms</h2>
-                <p>
-                    We may update these Terms from time to time. Any changes will be posted on this page with an 
-                    updated “Last updated” date. Your continued use of our services after changes are published 
-                    constitutes acceptance of the revised Terms.
-                </p>
-            </div>
+                <div class="terms-section">
+                    <h2><i class="fas fa-edit"></i> Amendments</h2>
+                    
+                    <h3><span class="clause-number">22</span> Terms Updates</h3>
+                    <p>
+                        We reserve the right to update these terms at any time. Continued use of our Services 
+                        after changes constitutes acceptance of the modified terms.
+                    </p>
+                    
+                    <h3><span class="clause-number">23</span> Notification</h3>
+                    <p>
+                        Material changes to these terms will be communicated to clients via email or through 
+                        notices on our website.
+                    </p>
+                </div>
 
-            <div class="legal-section" id="contact">
-                <h2>11. Contact Details</h2>
-                <p>
-                    If you have any questions about these Terms, please contact us:
-                </p>
-                <ul class="legal-contact-list">
-                    <li><strong>Email (General):</strong> <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a></li>
-                    <li><strong>Email (Legal):</strong> <a href="mailto:admin@renviait.co.uk">admin@renviait.co.uk</a></li>
-                    <li><strong>Address:</strong> 9, 399 Centro Building, MK9 2PG, Milton Keynes, United Kingdom</li>
-                </ul>
+                <div class="contact-terms">
+                    <h2>Questions About Our Terms?</h2>
+                    <p>
+                        If you have any questions about these Terms & Conditions, please contact us:
+                    </p>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:legal@renviait.co.uk">info@renviait.co.uk</a><br>
+                        <strong>Phone:</strong> +44 7497 149266<br>
+                        <strong>Address:</strong> Milton Keynes, United Kingdom
+                    </p>
+                    <p>
+                        For service-related inquiries, please contact our main office at 
+                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-   <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
-                    <span class="footer-logo-text">Renvia IT</span>
-                </div>
-                <p class="footer-description">
-                    Professional IT recycling services with a commitment to environmental 
-                    sustainability and data security.
+    <!-- CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to work with us?</h2>
+                <p class="cta-subtitle">
+                    Book your IT equipment collection with confidence.
                 </p>
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Book a Collection
                     </a>
-                    <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-file-alt"></i>
+                        Request Quote
                     </a>
                 </div>
             </div>
-            
-            <div class="footer-section">
-                <h4 class="footer-title">Services</h4>
-                <ul class="footer-links">
-                    <li><a href="services.html">IT Recycling</a></li>
-                    <li><a href="services.html">Data Destruction</a></li>
-                    <li><a href="services.html">Asset Recovery</a></li>
-                    <li><a href="services.html">Compliance</a></li>
-                </ul>
+        </div>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                        <span class="footer-logo-text">Renvia IT</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional IT recycling services with a commitment to environmental 
+                        sustainability and data security.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="it-recycling.html">IT Recycling</a></li>
+                        <li><a href="data.html">Data Destruction</a></li>
+                        <li><a href="asset.html">Asset Recovery</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7497 149266</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Milton Keynes, United Kingdom</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="footer-section">
-                <h4 class="footer-title">Company</h4>
-                <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="how-it-works.html">How It Works</a></li>
-                    <li><a href="impact.html">Impact</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4 class="footer-title">Contact</h4>
-                <ul class="footer-contact">
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <span>+44 7497 149266</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Milton Keynes, United Kingdom</span>
-                    </li>
-                </ul>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Renvia IT Ltd. All rights reserved.
+                </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-legal">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms & Conditions</a>
-                <a href="#">Cookie Policy</a>
-            </div>
-            <div class="footer-copyright">
-                © 2025 Renvia IT Ltd. All rights reserved.
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>

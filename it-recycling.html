@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
+    <title>IT Recycling Services - Renvia IT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
+    <meta name="description" content="Professional IT recycling services with certified data destruction, environmental compliance, and secure chain of custody for businesses across the UK.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Services Page Specific Styles */
+        .services-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .services-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            color: white;
+        }
+        
+        .services-hero p {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .service-feature-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .service-feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .service-feature-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.4rem;
+        }
+        
+        .service-feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .equipment-types {
+            background: var(--bg-light);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .equipment-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .equipment-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .equipment-card h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .equipment-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .equipment-card li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .equipment-card li i {
+            color: var(--primary);
+            margin-right: var(--spacing-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .compliance-section {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .compliance-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+        
+        .compliance-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .process-steps {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f7f4 100%);
+            padding: var(--spacing-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 146, 69, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .steps-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .step-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            position: relative;
+            transition: all var(--transition-normal);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .step-card h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .benefits-section {
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl) 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .benefit-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-normal);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .benefit-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 146, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .benefit-card h4 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .benefit-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .cta-banner {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            padding: var(--spacing-2xl);
+            text-align: center;
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .cta-banner h2 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 2.2rem;
+        }
+        
+        .cta-banner p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .cta-banner .cta-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .services-grid,
+            .equipment-grid,
+            .compliance-grid,
+            .steps-container,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-feature-card,
+            .equipment-card,
+            .compliance-card,
+            .step-card,
+            .benefit-card {
+                padding: var(--spacing-lg);
+            }
+            
+            .cta-banner {
+                padding: var(--spacing-xl);
+                margin: var(--spacing-xl) 0;
+            }
+            
+            .cta-banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-banner .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-banner .cta-actions .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .services-hero {
+                padding: var(--spacing-2xl) 0;
+            }
+            
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-banner h2 {
+                font-size: 1.6rem;
+            }
+            
+            .benefit-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .benefit-icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="./assets/images/Asset 6.png" alt="Renvia IT Logo" class="header-logo">
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="donate.html" class="btn-text">Donate</a>
+                    <a href="book-collection.html" class="btn btn-primary">Book Collection</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <h1>IT Recycling Services</h1>
+                <p>Secure, sustainable IT disposal with certified data destruction and environmental compliance for businesses across the UK.</p>
+                <div class="hero-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Collection
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-file-alt"></i>
+                        Get Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Services -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive IT Recycling Solutions</h2>
+                <p class="section-subtitle">End-to-end services designed for security, compliance, and sustainability</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-feature-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Data Destruction</h3>
+                    <p>Certified data wiping and physical destruction services that meet GDPR requirements and industry standards for complete data security.</p>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3>Professional Collection</h3>
+                    <p>Nationwide collection service with secure chain of custody, insured logistics, and minimal business disruption.</p>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="service-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Environmentally Responsible</h3>
+                    <p>95%+ landfill diversion through reuse, refurbishment, and responsible recycling of all IT equipment components.</p>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-certificate"></i>
+                    </div>
+                    <h3>Full Compliance Documentation</h3>
+                    <p>Complete audit trail with certificates of destruction, environmental reports, and compliance documentation for your records.</p>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3>IT Asset Remarketing</h3>
+                    <p>Value recovery through secure remarketing of reusable equipment, with revenue sharing options for qualifying assets.</p>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>ESG Reporting</h3>
+                    <p>Detailed environmental impact reporting to support your corporate sustainability goals and ESG commitments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment We Process -->
+    <section class="equipment-types">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Equipment We Recycle</h2>
+                <p class="section-subtitle">Comprehensive processing for all types of IT and electronic equipment</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h4>Computers & Workstations</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Desktop Computers</li>
+                        <li><i class="fas fa-check"></i> All-in-One PCs</li>
+                        <li><i class="fas fa-check"></i> Workstations</li>
+                        <li><i class="fas fa-check"></i> Thin Clients</li>
+                    </ul>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h4>Laptops & Mobile Devices</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Business Laptops</li>
+                        <li><i class="fas fa-check"></i> Tablets & iPads</li>
+                        <li><i class="fas fa-check"></i> Mobile Phones</li>
+                        <li><i class="fas fa-check"></i> Convertibles</li>
+                    </ul>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4>Servers & Storage</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Rack Servers</li>
+                        <li><i class="fas fa-check"></i> Tower Servers</li>
+                        <li><i class="fas fa-check"></i> NAS & SAN Devices</li>
+                        <li><i class="fas fa-check"></i> Storage Arrays</li>
+                    </ul>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h4>Office Equipment</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Printers & Scanners</li>
+                        <li><i class="fas fa-check"></i> Photocopiers</li>
+                        <li><i class="fas fa-check"></i> Monitors & Displays</li>
+                        <li><i class="fas fa-check"></i> Keyboards & Mice</li>
+                    </ul>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4>Networking Equipment</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Switches & Routers</li>
+                        <li><i class="fas fa-check"></i> Firewalls</li>
+                        <li><i class="fas fa-check"></i> Wireless Access Points</li>
+                        <li><i class="fas fa-check"></i> Network Storage</li>
+                    </ul>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Telecoms & Other</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Telephone Systems</li>
+                        <li><i class="fas fa-check"></i> Conference Systems</li>
+                        <li><i class="fas fa-check"></i> UPS Systems</li>
+                        <li><i class="fas fa-check"></i> Cables & Accessories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="process-steps">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Recycling Process</h2>
+                <p class="section-subtitle">A streamlined workflow ensuring security, compliance, and environmental responsibility</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Assessment & Booking</h4>
+                    <p>We discuss your requirements, provide a transparent quote, and schedule collection at your convenience.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Secure Collection</h4>
+                    <p>Our trained team collects equipment with full chain of custody documentation and secure transportation.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Data Destruction</h4>
+                    <p>All data-bearing devices undergo certified wiping or physical destruction with full audit trail.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Equipment Processing</h4>
+                    <p>Devices are tested, refurbished for reuse, or responsibly dismantled for material recovery.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h4>Material Recycling</h4>
+                    <p>Components are separated and sent to approved partners for responsible material recycling.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h4>Reporting & Certification</h4>
+                    <p>You receive comprehensive documentation including certificates of destruction and environmental reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance & Standards -->
+    <section class="compliance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Compliance & Standards</h2>
+                <p class="section-subtitle">Meeting the highest standards for data security and environmental responsibility</p>
+            </div>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h4>GDPR Compliance</h4>
+                    <p>Data destruction processes designed to meet GDPR requirements for personal data protection and privacy.</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Data Security Standards</h4>
+                    <p>Adherence to NIST 800-88 and DoD data sanitization standards for complete data eradication.</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>WEEE Regulations</h4>
+                    <p>Full compliance with Waste Electrical and Electronic Equipment regulations for environmental protection.</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h4>ISO Standards</h4>
+                    <p>Processes aligned with ISO 14001 (Environmental) and ISO 27001 (Information Security) standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Benefits of Professional IT Recycling</h2>
+                <p class="section-subtitle">Why businesses choose Renvia IT for their IT disposal needs</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>Data Security</h4>
+                    </div>
+                    <p>Protect your business from data breaches with certified data destruction that eliminates security risks from retired equipment.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-pound-sign"></i>
+                        </div>
+                        <h4>Cost Efficiency</h4>
+                    </div>
+                    <p>Reduce storage costs and potential fines with professional disposal that's often more cost-effective than internal handling.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Compliance Assurance</h4>
+                    </div>
+                    <p>Meet legal obligations for data protection and environmental regulations with comprehensive documentation and audit trails.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>Environmental Impact</h4>
+                    </div>
+                    <p>Demonstrate your commitment to sustainability with high landfill diversion rates and responsible resource management.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4>Business Efficiency</h4>
+                    </div>
+                    <p>Streamline your IT asset lifecycle management with professional services that save time and reduce administrative burden.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Risk Mitigation</h4>
+                    </div>
+                    <p>Minimize legal, financial, and reputational risks associated with improper IT equipment disposal and data handling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner">
+                <h2>Ready to Recycle Your IT Equipment?</h2>
+                <p>Join hundreds of businesses across the UK who trust Renvia IT for secure, compliant, and environmentally responsible IT disposal.</p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Collection
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Speak to Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Final CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Start Your IT Recycling Journey Today</h2>
+                <p class="cta-subtitle">
+                    Get a free, no-obligation quote for your IT equipment disposal needs.
+                </p>
+                <div class="cta-actions">
+                    <a href="book-collection.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-check"></i>
+                        Book a Collection
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-file-alt"></i>
+                        Request a Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/images/Asset 4.png" alt="Renvia IT Logo" class="footer-logo-image">
+                        <span class="footer-logo-text">Renvia IT</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional IT recycling services with a commitment to environmental 
+                        sustainability and data security.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/renviat_it/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.facebook.com/people/Renvia-it-Ltd/61583587134266/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/renvia-it-ltd-5a64b9391/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="it-recycling.html">IT Recycling</a></li>
+                        <li><a href="data.html">Data Destruction</a></li>
+                        <li><a href="asset.html">Asset Recovery</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@renviait.co.uk">info@renviait.co.uk</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7497 149266</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Milton Keynes, United Kingdom</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="policy.html">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Renvia IT Ltd. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

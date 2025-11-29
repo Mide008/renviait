@@ -562,6 +562,19 @@ input, textarea, select {
     .hero-image {
         max-width: 100%;
     }
+
+    .header-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    width: 100%;
+}
+
+.header-actions .btn {
+    width: 100%;
+    justify-content: center;
+}
 }
 
 @media (max-width: 480px) {
@@ -849,12 +862,21 @@ input, textarea, select {
     .nav-link {
         font-size: 1.125rem;
         padding: var(--spacing-sm) 0;
-        width: 100%;
+        width: 40%;
     }
     
-    .header-actions {
-        display: none;
-    }
+   .header-actions {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    width: 40%;
+}
+
+.header-actions .btn {
+    width: 100%;
+    justify-content: center;
+}
     
     .mobile-menu-toggle {
         display: flex;
