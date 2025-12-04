@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDD7JJN7');</script>
+    <!-- End Google Tag Manager -->
     <title>Environmental Impact Calculator - Renvia IT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
     <meta name="description" content="Calculate the environmental impact of recycling your IT equipment. See how many CO₂ emissions you can prevent and trees you can save.">
@@ -23,13 +23,277 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="css/pages.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Global Impact Section Styles */
+        .global-impact-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .global-impact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23009988" opacity="0.1"><path d="M50,0 C77.614,0 100,22.386 100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 C0,22.386 22.386,0 50,0 Z"></path></svg>') no-repeat;
+            transform: translate(30%, -30%);
+        }
+        
+        .global-impact-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23006655" opacity="0.05"><path d="M0,50 C0,22.386 22.386,0 50,0 C77.614,0 100,22.386 100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 Z"></path></svg>') no-repeat;
+            transform: translate(-30%, 30%);
+        }
+        
+        .global-impact-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .global-impact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .global-impact-header h2 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .global-impact-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #009988 0%, #006655 100%);
+            border-radius: 2px;
+        }
+        
+        .global-impact-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .global-impact-body {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 153, 136, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .impact-story {
+            margin-bottom: 2rem;
+        }
+        
+        .impact-story p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-story p strong {
+            color: #009988;
+            font-weight: 600;
+        }
+        
+        .impact-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        
+        .impact-highlight {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #009988;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .impact-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 153, 136, 0.1);
+        }
+        
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #009988 0%, #006655 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .highlight-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .highlight-title {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+        
+        .highlight-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .global-partners {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 3rem 0 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .partner-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .partner-logo {
+            font-size: 2.5rem;
+            color: #009988;
+            margin-bottom: 1rem;
+        }
+        
+        .partner-name {
+            font-family: 'Lexend', sans-serif;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .partner-role {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .global-impact-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .global-impact-cta .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #009988 0%, #006655 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 153, 136, 0.3);
+        }
+        
+        .global-impact-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 153, 136, 0.4);
+        }
+        
+        .global-impact-cta .btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .global-impact-cta .btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .global-impact-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .global-impact-header h2 {
+                font-size: 2rem;
+            }
+            
+            .global-impact-body {
+                padding: 2rem 1.5rem;
+            }
+            
+            .impact-highlights {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .impact-highlight {
+                padding: 1.5rem;
+            }
+            
+            .global-partners {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .partner-item {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .global-impact-header h2 {
+                font-size: 1.75rem;
+            }
+            
+            .global-impact-body {
+                padding: 1.5rem;
+            }
+            
+            .global-impact-cta .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDD7JJN7" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
-
-   <!-- Header -->
+    <!-- Header -->
     <header class="header" id="header">
         <div class="container">
             <div class="header-content">
@@ -41,7 +305,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="how-it-works.html" class="nav-link">How It Works</a>
                     <a href="pricing.html" class="nav-link">Pricing</a>
-                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="impact.html" class="nav-link active">Impact</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
                 
@@ -66,6 +330,95 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="page-subtitle">
                 Discover the positive environmental impact of recycling your IT equipment
             </p>
+        </div>
+    </section>
+
+    <!-- Global Impact Section -->
+    <section class="global-impact-section">
+        <div class="container">
+            <div class="global-impact-content">
+                <div class="global-impact-header">
+                    <h2>Our Global Impact</h2>
+                    <p>Creating positive change across continents through responsible IT recycling</p>
+                </div>
+                
+                <div class="global-impact-body">
+                    <div class="impact-story">
+                        <p>
+                            Renvia IT Ltd is part of a wider circular technology ecosystem. 
+                            Through our global impact arm at <strong>Renvia IT (renviait.org)</strong> and our Africa-based initiative 
+                            <strong>Renvia Tech Hub Africa</strong>, suitable refurbished devices from our UK collections are 
+                            routed into schools, youth programmes and community projects across Nigeria and Africa.
+                        </p>
+                        
+                        <p>
+                            This means that when you choose Renvia for IT collections, you are not only complying with 
+                            UK waste and data regulations – you are also directly supporting digital inclusion, 
+                            education and future tech talent in underserved communities.
+                        </p>
+                    </div>
+                    
+                    <div class="impact-highlights">
+                        <div class="impact-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="highlight-title">Digital Education</h3>
+                            <p class="highlight-desc">
+                                Providing refurbished devices to schools and educational institutions 
+                                in underserved communities across Africa
+                            </p>
+                        </div>
+                        
+                        <div class="impact-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3 class="highlight-title">Community Support</h3>
+                            <p class="highlight-desc">
+                                Empowering youth programmes and community initiatives with 
+                                essential technology resources
+                            </p>
+                        </div>
+                        
+                        <div class="impact-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <h3 class="highlight-title">Circular Economy</h3>
+                            <p class="highlight-desc">
+                                Extending device lifespans through responsible refurbishment 
+                                and sustainable distribution
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="global-partners">
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <div class="partner-name">Renvia IT Foundation</div>
+                            <div class="partner-role">Global Impact Arm</div>
+                        </div>
+                        
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="partner-name">Renvia Tech Hub Africa</div>
+                            <div class="partner-role">Africa-Based Initiative</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="global-impact-cta">
+                    <a href="https://www.renviait.org" target="_blank" class="btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        See Our Global Impact
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -288,7 +641,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-<footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
