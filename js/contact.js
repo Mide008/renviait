@@ -1,14 +1,10 @@
 /**
- * Renvia IT - Contact Form Handler
- * Sends contact form submissions to info@renviait.co.uk via EmailJS
+ * Renvia IT - Contact Form Handler (Formspree Version)
+ * Sends to info@renviait.co.uk + auto-confirmation to user
  */
 
-// EmailJS Configuration for Contact Form
-const CONTACT_EMAILJS_CONFIG = {
-    serviceID: 'service_9bpuyrl',
-    templateID: 'template_rwk5d2u',
-    publicKey: 'agh7NagMXpm94Stal'
-};
+// FORMSPREE CONFIGURATION
+const FORMSPREE_CONTACT_ENDPOINT = 'mykkyqgv'; // Replace with your form ID from Formspree
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -23,92 +19,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = {
-                firstName: formData.get('firstName').trim(),
-                lastName: formData.get('lastName').trim(),
-                email: formData.get('email').trim(),
-                phone: formData.get('phone')?.trim() || 'Not provided',
-                subject: formData.get('subject'),
-                message: formData.get('message').trim(),
-                timestamp: new Date().toISOString()
-            };
-            
-            // Disable submit button
+            // Get submit button
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Add recipient email (to ensure it goes to your email)
+            formData.append('_replyto', formData.get('email'));
+            formData.append('_subject', `New Contact Form: ${formData.get('subject')}`);
+            
             try {
-                // Send email via EmailJS
-                await sendContactEmail(data);
+                // Send to Formspree
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_CONTACT_ENDPOINT}`, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
                 
-                // Show success message
-                showSuccessMessage();
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
+                if (response.ok) {
+                    // Show success message
+                    showSuccessMessage();
+                    
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
                 
             } catch (error) {
                 console.error('Contact form error:', error);
                 showErrorMessage('There was an error sending your message. Please try again or email us directly at info@renviait.co.uk');
-                
+            } finally {
+                // Re-enable button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
             }
         });
-    }
-    
-    // ===================================
-    // SEND EMAIL VIA EMAILJS
-    // ===================================
-    async function sendContactEmail(data) {
-        // Check if EmailJS is loaded
-        if (typeof emailjs === 'undefined') {
-            console.error('EmailJS is not loaded');
-            throw new Error('EmailJS not loaded');
-        }
-        
-        // Get subject text
-        const subjectElement = contactForm.querySelector(`option[value="${data.subject}"]`);
-        const subjectText = subjectElement ? subjectElement.textContent : data.subject;
-        
-        // Prepare email parameters
-        const emailParams = {
-            to_email: 'info@renviait.co.uk',
-            from_name: `${data.firstName} ${data.lastName}`,
-            from_email: data.email,
-            phone: data.phone,
-            subject: subjectText,
-            message: data.message,
-            timestamp: new Date().toLocaleString('en-GB', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            })
-        };
-        
-        console.log('Sending contact email with params:', emailParams);
-        
-        // Send email using EmailJS
-        const response = await emailjs.send(
-            CONTACT_EMAILJS_CONFIG.serviceID,
-            CONTACT_EMAILJS_CONFIG.templateID,
-            emailParams,
-            CONTACT_EMAILJS_CONFIG.publicKey
-        );
-        
-        console.log('Email sent successfully:', response);
-        return response;
     }
     
     // ===================================
@@ -198,18 +150,15 @@ document.addEventListener('DOMContentLoaded', function() {
             <i class="fas fa-check-circle"></i>
             <div>
                 <strong>Message sent successfully!</strong><br>
-                Thank you for contacting us. We'll get back to you within 24 hours.
+                Thank you for contacting us. We'll get back to you within 24 hours. Check your email for a confirmation.
             </div>
         `;
         
         const form = document.getElementById('contactForm');
         if (form) {
             form.insertBefore(alert, form.firstChild);
-            
-            // Scroll to success message
             alert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             
-            // Auto remove after 8 seconds
             setTimeout(() => {
                 alert.style.transition = 'opacity 0.3s ease';
                 alert.style.opacity = '0';
@@ -235,11 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('contactForm');
         if (form) {
             form.insertBefore(alert, form.firstChild);
-            
-            // Scroll to error message
             alert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             
-            // Auto remove after 8 seconds
             setTimeout(() => {
                 alert.style.transition = 'opacity 0.3s ease';
                 alert.style.opacity = '0';
@@ -248,5 +194,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    console.log('Contact form initialized with EmailJS');
+    console.log('Contact form initialized with Formspree');
 });

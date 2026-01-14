@@ -1,16 +1,10 @@
 /**
- * Renvia IT - Multi-Step Booking Form with EmailJS
- * CONFIGURED AND READY TO USE!
+ * Renvia IT - Multi-Step Booking Form (Formspree Version)
+ * Sends to info@renviait.co.uk + auto-confirmation to user
  */
 
-// ===================================
-// EMAILJS CONFIGURATION - CONFIGURED
-// ===================================
-const EMAILJS_CONFIG = {
-    serviceID: 'service_9bpuyrl',
-    templateID: 'template_8u77t5n',
-    publicKey: 'agh7NagMXpm94Stal'
-};
+// FORMSPREE CONFIGURATION
+const FORMSPREE_BOOKING_ENDPOINT = 'maqqygyd'; // Replace with your form ID
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -324,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===================================
-    // FORM SUBMISSION WITH EMAILJS
+    // FORM SUBMISSION WITH FORMSPREE
     // ===================================
     if (form) {
         form.addEventListener('submit', async function(e) {
@@ -340,54 +334,83 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(form);
             const bookingRef = 'BK' + Date.now();
             
-            const data = {
-                bookingReference: bookingRef,
-                contact: {
-                    firstName: formData.get('firstName'),
-                    lastName: formData.get('lastName'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    company: formData.get('company'),
-                    jobTitle: formData.get('jobTitle')
-                },
-                equipment: {
-                    devices: formData.getAll('deviceType[]').map((type, index) => ({
-                        type,
-                        quantity: formData.getAll('quantity[]')[index]
-                    })),
-                    notes: formData.get('equipmentNotes')
-                },
-                collection: {
-                    address: formData.get('address'),
-                    city: formData.get('city'),
-                    postcode: formData.get('postcode'),
-                    date: formData.get('collectionDate'),
-                    time: formData.get('collectionTime'),
-                    instructions: formData.get('accessInstructions')
-                },
-                security: {
-                    destructionMethod: formData.get('dataDestruction'),
-                    certificateRequired: formData.get('certificate') === 'yes'
-                },
-                timestamp: new Date().toISOString()
-            };
+            // Prepare formatted data for email
+            const deviceTypes = formData.getAll('deviceType[]');
+            const quantities = formData.getAll('quantity[]');
+            const equipmentList = deviceTypes.map((type, index) => 
+                `${quantities[index]}x ${getDeviceTypeName(type)}`
+            ).join(', ');
+            
+            // Format collection date
+            const collectionDate = new Date(formData.get('collectionDate'));
+            const dateFormatted = collectionDate.toLocaleDateString('en-GB', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            // Create a new FormData with formatted fields for Formspree
+            const submissionData = new FormData();
+            
+            // Add all original fields
+            submissionData.append('bookingReference', bookingRef);
+            submissionData.append('firstName', formData.get('firstName'));
+            submissionData.append('lastName', formData.get('lastName'));
+            submissionData.append('email', formData.get('email'));
+            submissionData.append('phone', formData.get('phone'));
+            submissionData.append('company', formData.get('company'));
+            submissionData.append('jobTitle', formData.get('jobTitle') || 'Not specified');
+            submissionData.append('equipmentList', equipmentList);
+            submissionData.append('equipmentNotes', formData.get('equipmentNotes') || 'No additional notes');
+            submissionData.append('address', formData.get('address'));
+            submissionData.append('city', formData.get('city'));
+            submissionData.append('postcode', formData.get('postcode'));
+            submissionData.append('collectionDate', dateFormatted);
+            submissionData.append('collectionTime', formData.get('collectionTime'));
+            submissionData.append('accessInstructions', formData.get('accessInstructions') || 'No special instructions');
+            submissionData.append('dataDestruction', formData.get('dataDestruction'));
+            submissionData.append('certificate', formData.get('certificate'));
+            
+            // Formspree special fields
+            submissionData.append('_replyto', formData.get('email')); // Auto-reply to customer
+            submissionData.append('_subject', `New Booking Request - ${bookingRef}`);
             
             try {
-                // Send email via EmailJS
-                await sendBookingEmail(data);
-                
-                // Store in localStorage for dashboard
-                const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-                bookings.push({
-                    id: bookingRef,
-                    ...data,
-                    status: 'pending'
+                // Send to Formspree
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_BOOKING_ENDPOINT}`, {
+                    method: 'POST',
+                    body: submissionData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
                 });
-                localStorage.setItem('bookings', JSON.stringify(bookings));
-                localStorage.setItem('bookingEmail', data.contact.email);
                 
-                // Redirect to success page
-                window.location.href = `success.html?ref=${bookingRef}&email=${encodeURIComponent(data.contact.email)}`;
+                if (response.ok) {
+                    // Store in localStorage for dashboard
+                    const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                    bookings.push({
+                        id: bookingRef,
+                        firstName: formData.get('firstName'),
+                        lastName: formData.get('lastName'),
+                        email: formData.get('email'),
+                        company: formData.get('company'),
+                        collectionDate: formData.get('collectionDate'),
+                        status: 'pending',
+                        timestamp: new Date().toISOString()
+                    });
+                    localStorage.setItem('bookings', JSON.stringify(bookings));
+                    
+                    // Show success message
+                    document.getElementById('confirmEmail').textContent = formData.get('email');
+                    document.querySelector('.booking-form-container').style.display = 'none';
+                    document.querySelector('.stepper').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    throw new Error('Form submission failed');
+                }
                 
             } catch (error) {
                 console.error('Submission error:', error);
@@ -399,95 +422,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ===================================
-    // FIXED EMAIL SUBMISSION VIA EMAILJS
-    // Replace the sendBookingEmail function in your booking-form.js
-    // ===================================
-
-    async function sendBookingEmail(data) {
-        // Check if EmailJS is loaded
-        if (typeof emailjs === 'undefined') {
-            console.error('EmailJS is not loaded. Please add the EmailJS SDK to book-collection.html');
-            throw new Error('EmailJS not loaded');
-        }
-        
-        console.log('Preparing to send email with data:', data); // Debug log
-        
-        // Format equipment list for email
-        const equipmentList = data.equipment.devices.map(d => 
-            `${d.quantity}x ${getDeviceTypeName(d.type)}`
-        ).join(', ');
-        
-        console.log('Equipment list formatted:', equipmentList); // Debug log
-        
-        // Format date
-        const collectionDate = new Date(data.collection.date);
-        const dateFormatted = collectionDate.toLocaleDateString('en-GB', { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        });
-        
-        // Format destruction method
-        let destructionMethodText = data.security.destructionMethod;
-        if (destructionMethodText === 'standard') destructionMethodText = 'Standard Secure Wiping (DoD 5220.22-M)';
-        if (destructionMethodText === 'physical') destructionMethodText = 'Physical Destruction (Shredding)';
-        if (destructionMethodText === 'onsite') destructionMethodText = 'On-Site Destruction (Witnessed)';
-        
-        // Format collection time
-        let collectionTimeText = data.collection.time;
-        if (collectionTimeText === 'morning') collectionTimeText = 'Morning (8am - 12pm)';
-        if (collectionTimeText === 'afternoon') collectionTimeText = 'Afternoon (12pm - 5pm)';
-        if (collectionTimeText === 'flexible') collectionTimeText = 'Flexible';
-        
-        // Prepare email parameters - FIXED VERSION
-        const emailParams = {
-            to_email: 'info@renviait.co.uk',
-            booking_reference: data.bookingReference,
-            from_name: `${data.contact.firstName} ${data.contact.lastName}`,
-            from_email: data.contact.email,
-            phone: data.contact.phone,
-            company: data.contact.company,
-            job_title: data.contact.jobTitle || 'Not specified',
-            equipment_list: equipmentList,
-            equipment_notes: data.equipment.notes || 'No additional notes',
-            collection_address: `${data.collection.address}, ${data.collection.city}, ${data.collection.postcode}`,
-            collection_date: dateFormatted,
-            collection_time: collectionTimeText,
-            access_instructions: data.collection.instructions || 'No special instructions',
-            destruction_method: destructionMethodText,
-            certificate_required: data.security.certificateRequired ? 'Yes' : 'No',
-            timestamp: new Date().toLocaleString('en-GB', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            })
-        };
-        
-        console.log('Email parameters prepared:', emailParams); // Debug log
-        
-        try {
-            // Send email using EmailJS
-            const response = await emailjs.send(
-                EMAILJS_CONFIG.serviceID,
-                EMAILJS_CONFIG.templateID,
-                emailParams,
-                EMAILJS_CONFIG.publicKey
-            );
-            
-            console.log('Email sent successfully:', response); // Debug log
-            return response;
-            
-        } catch (error) {
-            console.error('EmailJS Error:', error);
-            throw error;
-        }
-    }
-
     function getDeviceTypeName(type) {
         const names = {
             laptop: 'Laptops',
@@ -506,5 +440,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     showStep(currentStep);
     
-    console.log('Booking form with EmailJS loaded successfully');
+    console.log('Booking form with Formspree loaded successfully');
 });
