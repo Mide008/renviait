@@ -1,10 +1,7 @@
 /**
- * Renvia IT - Contact Form Handler (Formspree Version)
- * Sends to info@renviait.co.uk + auto-confirmation to user
+ * Renvia IT - Contact Form Handler (Resend via Netlify Functions)
+ * Sends to info@renviait.co.uk + auto-reply to customers
  */
-
-// FORMSPREE CONFIGURATION
-const FORMSPREE_CONTACT_ENDPOINT = 'mykkyqgv'; // Replace with your form ID from Formspree
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -28,28 +25,36 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form data
             const formData = new FormData(contactForm);
             
-            // Add recipient email (to ensure it goes to your email)
-            formData.append('_replyto', formData.get('email'));
-            formData.append('_subject', `New Contact Form: ${formData.get('subject')}`);
+            // Prepare data for API
+            const contactData = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email').trim(),
+                phone: formData.get('phone')?.trim() || '',
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
             
             try {
-                // Send to Formspree
-                const response = await fetch(`https://formspree.io/f/${FORMSPREE_CONTACT_ENDPOINT}`, {
+                // Call Netlify Function
+                const response = await fetch('/.netlify/functions/send-contact', {
                     method: 'POST',
-                    body: formData,
                     headers: {
-                        'Accept': 'application/json'
-                    }
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(contactData)
                 });
                 
-                if (response.ok) {
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
                     // Show success message
                     showSuccessMessage();
                     
                     // Reset form
                     contactForm.reset();
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error(result.error || 'Form submission failed');
                 }
                 
             } catch (error) {
@@ -150,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <i class="fas fa-check-circle"></i>
             <div>
                 <strong>Message sent successfully!</strong><br>
-                Thank you for contacting us. We'll get back to you within 24 hours. Check your email for a confirmation.
+                Thank you for contacting us. We'll get back to you within 24 hours. Please check your email for a confirmation.
             </div>
         `;
         
@@ -194,5 +199,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    console.log('Contact form initialized with Formspree');
+    console.log('Contact form initialized with Resend (Netlify Functions)');
 });

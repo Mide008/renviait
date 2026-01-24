@@ -1,0 +1,32 @@
+# Netlify Configuration
+# Place this file in your project root
+
+[build]
+  # Your build command (if any)
+  # command = "npm run build"
+  
+  # Directory with your HTML files
+  publish = "."
+  
+  # Functions directory
+  functions = "netlify/functions"
+
+[functions]
+  # Node.js version
+  node_bundler = "esbuild"
+
+# Redirects and rewrites
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"

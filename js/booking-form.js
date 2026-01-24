@@ -1,10 +1,7 @@
 /**
- * Renvia IT - Multi-Step Booking Form (Formspree Version)
+ * Renvia IT - Multi-Step Booking Form (Resend via Netlify Functions)
  * Sends to info@renviait.co.uk + auto-confirmation to user
  */
-
-// FORMSPREE CONFIGURATION
-const FORMSPREE_BOOKING_ENDPOINT = 'maqqygyd'; // Replace with your form ID
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -318,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===================================
-    // FORM SUBMISSION WITH FORMSPREE
+    // FORM SUBMISSION WITH RESEND
     // ===================================
     if (form) {
         form.addEventListener('submit', async function(e) {
@@ -334,12 +331,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(form);
             const bookingRef = 'BK' + Date.now();
             
-            // Prepare formatted data for email
+            // Prepare equipment array
             const deviceTypes = formData.getAll('deviceType[]');
             const quantities = formData.getAll('quantity[]');
-            const equipmentList = deviceTypes.map((type, index) => 
-                `${quantities[index]}x ${getDeviceTypeName(type)}`
-            ).join(', ');
+            const equipment = deviceTypes.map((type, index) => ({
+                type: getDeviceTypeName(type),
+                quantity: quantities[index]
+            }));
             
             // Format collection date
             const collectionDate = new Date(formData.get('collectionDate'));
@@ -350,43 +348,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 day: 'numeric' 
             });
             
-            // Create a new FormData with formatted fields for Formspree
-            const submissionData = new FormData();
+            const timeSlot = document.querySelector(`option[value="${formData.get('collectionTime')}"]`)?.textContent || '';
             
-            // Add all original fields
-            submissionData.append('bookingReference', bookingRef);
-            submissionData.append('firstName', formData.get('firstName'));
-            submissionData.append('lastName', formData.get('lastName'));
-            submissionData.append('email', formData.get('email'));
-            submissionData.append('phone', formData.get('phone'));
-            submissionData.append('company', formData.get('company'));
-            submissionData.append('jobTitle', formData.get('jobTitle') || 'Not specified');
-            submissionData.append('equipmentList', equipmentList);
-            submissionData.append('equipmentNotes', formData.get('equipmentNotes') || 'No additional notes');
-            submissionData.append('address', formData.get('address'));
-            submissionData.append('city', formData.get('city'));
-            submissionData.append('postcode', formData.get('postcode'));
-            submissionData.append('collectionDate', dateFormatted);
-            submissionData.append('collectionTime', formData.get('collectionTime'));
-            submissionData.append('accessInstructions', formData.get('accessInstructions') || 'No special instructions');
-            submissionData.append('dataDestruction', formData.get('dataDestruction'));
-            submissionData.append('certificate', formData.get('certificate'));
-            
-            // Formspree special fields
-            submissionData.append('_replyto', formData.get('email')); // Auto-reply to customer
-            submissionData.append('_subject', `New Booking Request - ${bookingRef}`);
+            // Prepare data for API
+            const bookingData = {
+                bookingReference: bookingRef,
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                company: formData.get('company'),
+                jobTitle: formData.get('jobTitle') || '',
+                equipment: equipment,
+                equipmentNotes: formData.get('equipmentNotes') || '',
+                address: formData.get('address'),
+                city: formData.get('city'),
+                postcode: formData.get('postcode'),
+                collectionDate: dateFormatted,
+                collectionTime: timeSlot,
+                accessInstructions: formData.get('accessInstructions') || '',
+                dataDestruction: formData.get('dataDestruction'),
+                certificate: formData.get('certificate')
+            };
             
             try {
-                // Send to Formspree
-                const response = await fetch(`https://formspree.io/f/${FORMSPREE_BOOKING_ENDPOINT}`, {
+                // Call Netlify Function
+                const response = await fetch('/.netlify/functions/send-booking', {
                     method: 'POST',
-                    body: submissionData,
                     headers: {
-                        'Accept': 'application/json'
-                    }
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(bookingData)
                 });
                 
-                if (response.ok) {
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
                     // Store in localStorage for dashboard
                     const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
                     bookings.push({
@@ -409,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error(result.error || 'Form submission failed');
                 }
                 
             } catch (error) {
@@ -440,5 +437,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     showStep(currentStep);
     
-    console.log('Booking form with Formspree loaded successfully');
+    console.log('Booking form with Resend (Netlify Functions) loaded successfully');
 });
